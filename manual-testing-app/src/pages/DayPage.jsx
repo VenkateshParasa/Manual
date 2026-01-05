@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, BookOpen, Award, CheckCircle2 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
 import { getDayById, getAdjacentDays } from '../utils/contentStructure';
 import { hasAssessment } from '../data/assessments';
 import { getAssessmentResult } from '../utils/assessmentStorage';
 import TableOfContents from '../components/TableOfContents';
 import ProgressTracker from '../components/ProgressTracker';
+import 'highlight.js/styles/github-dark.css';
 
 const DayPage = () => {
   const { dayId } = useParams();
@@ -170,10 +175,70 @@ const DayPage = () => {
           </div>
 
           {/* Markdown Content */}
-          <article 
-            className="prose prose-lg max-w-none mb-12"
-            dangerouslySetInnerHTML={{ __html: renderMarkdown(content) }}
-          />
+          <article className="prose prose-lg max-w-none mb-12 prose-headings:scroll-mt-20">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeSlug, rehypeHighlight]}
+              components={{
+                // Custom rendering for code blocks
+                code({ node, inline, className, children, ...props }) {
+                  const match = /language-(\w+)/.exec(className || '');
+                  return !inline ? (
+                    <pre className={className}>
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    </pre>
+                  ) : (
+                    <code className="bg-gray-100 text-red-600 px-1.5 py-0.5 rounded text-sm font-mono" {...props}>
+                      {children}
+                    </code>
+                  );
+                },
+                // Custom rendering for links
+                a({ node, children, href, ...props }) {
+                  return (
+                    <a
+                      href={href}
+                      className="text-primary-600 hover:text-primary-700 underline"
+                      {...props}
+                    >
+                      {children}
+                    </a>
+                  );
+                },
+                // Custom rendering for tables
+                table({ node, children, ...props }) {
+                  return (
+                    <div className="overflow-x-auto my-6">
+                      <table className="min-w-full divide-y divide-gray-300" {...props}>
+                        {children}
+                      </table>
+                    </div>
+                  );
+                },
+                // Custom rendering for headings to add IDs
+                h1({ node, children, ...props }) {
+                  const id = String(children).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+                  return <h1 id={id} {...props}>{children}</h1>;
+                },
+                h2({ node, children, ...props }) {
+                  const id = String(children).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+                  return <h2 id={id} {...props}>{children}</h2>;
+                },
+                h3({ node, children, ...props }) {
+                  const id = String(children).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+                  return <h3 id={id} {...props}>{children}</h3>;
+                },
+                h4({ node, children, ...props }) {
+                  const id = String(children).toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+                  return <h4 id={id} {...props}>{children}</h4>;
+                },
+              }}
+            >
+              {content}
+            </ReactMarkdown>
+          </article>
 
           {/* Navigation */}
           <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-gray-200">
@@ -229,42 +294,6 @@ const DayPage = () => {
       </div>
     </div>
   );
-};
-
-// Simple markdown to HTML converter (basic implementation)
-const renderMarkdown = (markdown) => {
-  if (!markdown) return '';
-  
-  let html = markdown;
-  
-  // Headers
-  html = html.replace(/^### (.*$)/gim, '<h3 id="$1">$1</h3>');
-  html = html.replace(/^## (.*$)/gim, '<h2 id="$1">$1</h2>');
-  html = html.replace(/^# (.*$)/gim, '<h1 id="$1">$1</h1>');
-  
-  // Bold
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  
-  // Italic
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  
-  // Code blocks
-  html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-  
-  // Inline code
-  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-  
-  // Links
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-  
-  // Line breaks
-  html = html.replace(/\n\n/g, '</p><p>');
-  html = html.replace(/\n/g, '<br>');
-  
-  // Wrap in paragraphs
-  html = '<p>' + html + '</p>';
-  
-  return html;
 };
 
 export default DayPage;

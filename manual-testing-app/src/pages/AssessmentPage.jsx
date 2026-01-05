@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { BookOpen, Award, Clock, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { BookOpen, Award, Clock, AlertCircle, CheckCircle2, Eye, Zap, Target } from 'lucide-react';
 import { getDayById } from '../utils/contentStructure';
-import { getAssessment, hasAssessment } from '../data/assessments';
+import { getAssessment, hasAssessment, hasAssessmentModes, getAssessmentModes } from '../data/assessments';
 import { getAssessmentResult, canRetakeAssessment } from '../utils/assessmentStorage';
 import AssessmentQuiz from '../components/AssessmentQuiz';
 
@@ -11,8 +11,11 @@ const AssessmentPage = () => {
   const navigate = useNavigate();
   const [day, setDay] = useState(null);
   const [assessment, setAssessment] = useState(null);
+  const [assessmentModes, setAssessmentModes] = useState(null);
+  const [selectedMode, setSelectedMode] = useState('quick');
   const [previousResult, setPreviousResult] = useState(null);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [showReview, setShowReview] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,7 +33,13 @@ const AssessmentPage = () => {
         return;
       }
 
-      const assessmentData = getAssessment(dayId);
+      // Check if assessment has modes
+      if (hasAssessmentModes(dayId)) {
+        const modes = getAssessmentModes(dayId);
+        setAssessmentModes(modes);
+      }
+
+      const assessmentData = getAssessment(dayId, selectedMode);
       setAssessment(assessmentData);
 
       const result = getAssessmentResult(dayId);
@@ -43,12 +52,22 @@ const AssessmentPage = () => {
     window.scrollTo(0, 0);
   }, [dayId]);
 
-  const handleStartAssessment = () => {
+  const handleStartAssessment = (mode = selectedMode) => {
+    // Reload assessment with selected mode
+    const assessmentData = getAssessment(dayId, mode);
+    setAssessment(assessmentData);
+    setSelectedMode(mode);
     setShowQuiz(true);
+    setShowReview(false);
   };
 
   const handleCompleteAssessment = (results) => {
     setPreviousResult(results);
+    setShowQuiz(false);
+  };
+
+  const handleReviewAnswers = () => {
+    setShowReview(true);
     setShowQuiz(false);
   };
 
@@ -94,10 +113,26 @@ const AssessmentPage = () => {
   if (showQuiz) {
     return (
       <div className="px-4 py-8">
-        <AssessmentQuiz 
-          assessment={assessment} 
+        <AssessmentQuiz
+          assessment={assessment}
           dayId={dayId}
           onComplete={handleCompleteAssessment}
+          mode={selectedMode}
+        />
+      </div>
+    );
+  }
+
+  if (showReview && previousResult) {
+    return (
+      <div className="px-4 py-8">
+        <AssessmentQuiz
+          assessment={assessment}
+          dayId={dayId}
+          onComplete={handleCompleteAssessment}
+          reviewMode={true}
+          previousResult={previousResult}
+          mode={selectedMode}
         />
       </div>
     );
@@ -115,6 +150,86 @@ const AssessmentPage = () => {
           <li className="text-gray-900 font-medium">Assessment</li>
         </ol>
       </nav>
+
+      {/* Mode Selector */}
+      {assessmentModes && !showQuiz && !showReview && (
+        <div className="card mb-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Choose Assessment Mode</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Quick Mode */}
+            <button
+              onClick={() => {
+                setSelectedMode('quick');
+                const assessmentData = getAssessment(dayId, 'quick');
+                setAssessment(assessmentData);
+              }}
+              className={`p-6 rounded-lg border-2 transition-all text-left ${
+                selectedMode === 'quick'
+                  ? 'border-primary-600 bg-primary-50'
+                  : 'border-gray-200 hover:border-primary-300'
+              }`}
+            >
+              <div className="flex items-start gap-3 mb-3">
+                <Zap className={`w-6 h-6 ${selectedMode === 'quick' ? 'text-primary-600' : 'text-gray-400'}`} />
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-900 mb-1">
+                    {assessmentModes.quick.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 mb-2">
+                    {assessmentModes.quick.description}
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      {assessmentModes.quick.timeLimit} min
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <BookOpen className="w-4 h-4" />
+                      10 questions
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </button>
+
+            {/* Full Mode */}
+            <button
+              onClick={() => {
+                setSelectedMode('full');
+                const assessmentData = getAssessment(dayId, 'full');
+                setAssessment(assessmentData);
+              }}
+              className={`p-6 rounded-lg border-2 transition-all text-left ${
+                selectedMode === 'full'
+                  ? 'border-primary-600 bg-primary-50'
+                  : 'border-gray-200 hover:border-primary-300'
+              }`}
+            >
+              <div className="flex items-start gap-3 mb-3">
+                <Target className={`w-6 h-6 ${selectedMode === 'full' ? 'text-primary-600' : 'text-gray-400'}`} />
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-900 mb-1">
+                    {assessmentModes.full.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 mb-2">
+                    {assessmentModes.full.description}
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      {assessmentModes.full.timeLimit} min
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <BookOpen className="w-4 h-4" />
+                      35 questions
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Assessment Info */}
       <div className="card mb-6">
@@ -231,10 +346,10 @@ const AssessmentPage = () => {
         <div className="flex flex-wrap gap-4">
           {canRetakeAssessment(dayId) ? (
             <button
-              onClick={handleStartAssessment}
+              onClick={() => handleStartAssessment(selectedMode)}
               className="btn-primary flex items-center gap-2"
             >
-              {previousResult ? 'Retake Assessment' : 'Start Assessment'}
+              {previousResult ? `Retake Assessment (${selectedMode === 'quick' ? 'Quick' : 'Full'} Mode)` : `Start Assessment (${selectedMode === 'quick' ? 'Quick' : 'Full'} Mode)`}
               <Award className="w-5 h-5" />
             </button>
           ) : (
@@ -242,6 +357,16 @@ const AssessmentPage = () => {
               <AlertCircle className="w-5 h-5" />
               <span>Maximum attempts reached (3/3)</span>
             </div>
+          )}
+          
+          {previousResult && (
+            <button
+              onClick={handleReviewAnswers}
+              className="btn-secondary flex items-center gap-2"
+            >
+              <Eye className="w-5 h-5" />
+              Review Answers
+            </button>
           )}
           
           <Link

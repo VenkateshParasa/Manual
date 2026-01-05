@@ -9,7 +9,9 @@
 3. [Software Testing Life Cycle (STLC)](#software-testing-life-cycle-stlc)
 4. [Real-World Examples](#real-world-examples)
 5. [Practical Exercises](#practical-exercises)
-6. [Assessment Questions](#assessment-questions)
+6. [Summary & Key Takeaways](#summary--key-takeaways)
+
+**Note:** Assessment questions are available in a separate file: [`Week1_Day1_Assessment.md`](Week1_Day1_Assessment.md) and in the interactive web application.
 
 ---
 
@@ -187,11 +189,11 @@
 - Limited scalability
 - Documentation overhead
 
-**Typical Cost Structure:**
-- Junior Tester: $40,000 - $60,000/year
-- Mid-Level Tester: $60,000 - $90,000/year
-- Senior Tester: $90,000 - $130,000/year
-- Testing Tools: $5,000 - $20,000/year per tool
+**Typical Cost Structure (India):**
+- Junior Tester: ₹3,00,000 - ₹5,00,000/year ($3,600 - $6,000)
+- Mid-Level Tester: ₹5,00,000 - ₹10,00,000/year ($6,000 - $12,000)
+- Senior Tester: ₹10,00,000 - ₹20,00,000/year ($12,000 - $24,000)
+- Testing Tools: ₹4,00,000 - ₹15,00,000/year per tool ($5,000 - $18,000)
 
 #### Benefits of Manual Testing:
 
@@ -211,16 +213,16 @@
 **ROI Calculation Example:**
 
 ```
-Cost of Manual Testing per Release:
-- 2 testers × $30/hour × 80 hours = $4,800
-- Testing tools and infrastructure = $500
-- Total Cost = $5,300
+Cost of Manual Testing per Release (India):
+- 2 testers × ₹500/hour × 80 hours = ₹80,000 ($960)
+- Testing tools and infrastructure = ₹10,000 ($120)
+- Total Cost = ₹90,000 ($1,080)
 
 Benefits:
 - 45 defects found in testing
-- Average production defect fix cost = $1,500
-- Potential savings = 45 × $1,500 = $67,500
-- ROI = (67,500 - 5,300) / 5,300 × 100 = 1,174%
+- Average production defect fix cost = ₹25,000 ($300)
+- Potential savings = 45 × ₹25,000 = ₹11,25,000 ($13,500)
+- ROI = (11,25,000 - 90,000) / 90,000 × 100 = 1,150%
 ```
 
 **Break-Even Analysis:**
@@ -751,12 +753,12 @@ Testing involvement from beginning
 
 #### Benefits of Shift-Left:
 
-**Cost Savings:**
-- Bug found in requirements: $100 to fix
-- Bug found in design: $500 to fix
-- Bug found in development: $1,500 to fix
-- Bug found in testing: $5,000 to fix
-- **Bug found in production: $15,000+ to fix**
+**Cost Savings (India):**
+- Bug found in requirements: ₹2,000 to fix ($25)
+- Bug found in design: ₹10,000 to fix ($120)
+- Bug found in development: ₹30,000 to fix ($360)
+- Bug found in testing: ₹1,00,000 to fix ($1,200)
+- **Bug found in production: ₹3,00,000+ to fix ($3,600+)**
 
 **Quality Benefits:**
 - 40-50% reduction in defects
@@ -814,7 +816,7 @@ Testing involvement from beginning
 - **Total: 8 months**
 - **Defects found in testing: 456**
 - **Production defects (first 3 months): 89**
-- **Total cost of defects: $445,000**
+- **Total cost of defects: ₹3,50,00,000 ($420,000)**
 
 **After Shift-Left:**
 - Requirements: 2.5 months (testers involved from day 1)
@@ -827,8 +829,8 @@ Testing involvement from beginning
   - Only 122 new defects found
 - **Total: 7.5 months (6% faster)**
 - **Production defects (first 3 months): 12 (87% reduction)**
-- **Total cost of defects: $78,000 (82% savings)**
-- **ROI of Shift-Left: $367,000**
+- **Total cost of defects: ₹65,00,000 ($78,000) (82% savings)**
+- **ROI of Shift-Left: ₹3,05,00,000 ($366,000)**
 
 ---
 
@@ -1557,8 +1559,8 @@ Replacing 20-year-old COBOL-based system with modern Java-based platform.
 - Total defects found: 935
 - Production defects (first 6 months): 23
 - Defect leakage: 2.4% (excellent)
-- Cost of testing: $2.1M
-- Cost savings from prevented defects: $8.7M
+- Cost of testing: ₹17.5 Crores ($2.1M)
+- Cost savings from prevented defects: ₹72.5 Crores ($8.7M)
 - **ROI: 314%**
 
 **Lessons Learned:**
@@ -1777,9 +1779,9 @@ HIPAA-compliant system for patient records, appointments, and billing.
 ✅ **Regulatory Compliance:** Rigorous documentation satisfied auditors
 ✅ **High Reliability:** Mission-critical system required zero errors
 
-**Cost Analysis:**
-- Development + Testing cost: $4.2M
-- Cost if production defects occurred: $15-20M (patient safety, lawsuits, HIPAA fines)
+**Cost Analysis (India):**
+- Development + Testing cost: ₹35 Crores ($4.2M)
+- Cost if production defects occurred: ₹125-165 Crores ($15-20M) (patient safety, lawsuits, compliance fines)
 - **Value of V-Model: Prevented potentially catastrophic failures**
 
 ---
@@ -1904,18 +1906,18 @@ Code Commit → Build → Unit Tests → Integration Tests → Deploy to Staging
 
 **Cost-Benefit Analysis:**
 
-**Investment:**
-- DevOps tooling: $150K/year
-- Automation engineers: 3 FTE ($450K/year)
-- Infrastructure: $200K/year
-- **Total: $800K/year**
+**Investment (India):**
+- DevOps tooling: ₹1.25 Crores/year ($150K)
+- Automation engineers: 3 FTE (₹3.75 Crores/year or $450K)
+- Infrastructure: ₹1.65 Crores/year ($200K)
+- **Total: ₹6.65 Crores/year ($800K)**
 
 **Benefits:**
 - Faster time to market: 10x improvement
-- Reduced production incidents: Save $2M/year
-- Increased customer satisfaction: $5M additional revenue
+- Reduced production incidents: Save ₹16.5 Crores/year ($2M)
+- Increased customer satisfaction: ₹41.5 Crores additional revenue ($5M)
 - Developer productivity: 30% improvement
-- **Total value: $7M+/year**
+- **Total value: ₹58+ Crores/year ($7M+)**
 - **ROI: 775%**
 
 **Manual Testing Role in DevOps:**
@@ -2133,9 +2135,9 @@ Your company is developing a ride-sharing app. The project has these characteris
 
 ---
 
-## Assessment Questions
+## Summary & Key Takeaways
 
-### Section A: Multiple Choice Questions (15 questions)
+### Day 1 Key Concepts:
 
 **1. What is the primary objective of manual testing?**
    a) To replace automated testing
@@ -2353,11 +2355,6 @@ Your company is developing a ride-sharing app. The project has these characteris
    _____________________________________
    _____________________________________
 
----
-
-## Answer Key
-
-### Section A: MCQ Answers
 
 1. **b) To find defects and ensure quality**
    - Primary objective is defect detection and quality assurance
@@ -2594,11 +2591,7 @@ Your company is developing a ride-sharing app. The project has these characteris
    - Encourage developer-tester pairing
    - Foster continuous communication
 
----
-
-## Summary & Key Takeaways
-
-### Day 1 Key Concepts:
+### Assessment:
 
 1. **Manual Testing Fundamentals:**
    - Still essential despite automation growth
@@ -2620,6 +2613,11 @@ Your company is developing a ride-sharing app. The project has these characteris
    - 150x cost savings vs production defects
    - Requires cultural and process changes
 
+- Assessment questions available in [`Week1_Day1_Assessment.md`](Week1_Day1_Assessment.md)
+- Interactive assessment in web application with Quick (10 questions) and Full (35 questions) modes
+- Review feature to learn from mistakes
+- Passing score: 70%
+
 ### Tomorrow's Preview:
 
 Day 2 will cover:
@@ -2633,14 +2631,16 @@ Day 2 will cover:
 
 **Daily Checklist:**
 - ☐ Reviewed all concepts
-- ☐ Completed 5 exercises
-- ☐ Answered 35 assessment questions
-- ☐ Scored at least 28/35 (80%)
+- ☐ Completed 5 practical exercises
+- ☐ Take assessment (Quick or Full mode in web app)
+- ☐ Score at least 70% to pass
+- ☐ Review mistakes using Review Answers feature
 - ☐ Created summary notes
 - ☐ Ready for Day 2
 
-**Study Time:** 3-4 hours
+**Study Time:** 3-4 hours (study) + 15-45 minutes (assessment)
 
 ---
 
 *End of Day 1 Study Guide*
+*Assessment: See [`Week1_Day1_Assessment.md`](Week1_Day1_Assessment.md) or use the web application*

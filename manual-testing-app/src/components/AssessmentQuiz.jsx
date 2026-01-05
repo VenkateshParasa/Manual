@@ -1,25 +1,57 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
-  CheckCircle2, 
-  XCircle, 
-  Clock, 
-  Award, 
-  ArrowRight, 
+import {
+  CheckCircle2,
+  XCircle,
+  Clock,
+  Award,
+  ArrowRight,
   ArrowLeft,
   AlertCircle,
-  Trophy
+  Trophy,
+  BookOpen
 } from 'lucide-react';
 import { calculateScore } from '../data/assessments';
-import { saveAssessmentResult } from '../utils/assessmentStorage';
+import { saveAssessmentResult, getAssessmentResult } from '../utils/assessmentStorage';
+import { getAssessmentWithSections } from '../data/assessments';
 
-const AssessmentQuiz = ({ assessment, dayId, onComplete }) => {
+const AssessmentQuiz = ({ assessment: propAssessment, dayId, onComplete, reviewMode = false, previousResult = null, mode = 'quick' }) => {
+  // Get assessment with sections and mode
+  const assessmentWithSections = getAssessmentWithSections(dayId, mode);
+  const hasSections = assessmentWithSections?.sections;
+  
+  // Use sectioned assessment if available, otherwise use prop
+  const assessment = hasSections ? assessmentWithSections : propAssessment;
+  
+  const [currentSection, setCurrentSection] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
-  const [showResults, setShowResults] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(assessment.timeLimit * 60); // Convert to seconds
-  const [results, setResults] = useState(null);
+  const [showResults, setShowResults] = useState(reviewMode);
+  const [timeRemaining, setTimeRemaining] = useState(assessment.timeLimit * 60);
+  const [results, setResults] = useState(reviewMode ? previousResult : null);
   const navigate = useNavigate();
+
+  // Load previous answers if in review mode
+  useEffect(() => {
+    if (reviewMode && previousResult) {
+      // Load the saved answers from localStorage
+      const savedResult = getAssessmentResult(dayId);
+      if (savedResult && savedResult.answers) {
+        setAnswers(savedResult.answers);
+      }
+    }
+  }, [reviewMode, previousResult, dayId]);
+
+  // Get all questions (flattened from sections or direct)
+  const allQuestions = hasSections 
+    ? assessment.sections.flatMap(section => section.questions)
+    : assessment.questions;
+
+  // Get current section's questions
+  const currentSectionData = hasSections ? assessment.sections[currentSection] : null;
+  const sectionQuestions = hasSections 
+    ? currentSectionData.questions 
+    : allQuestions;
 
   // Timer
   useEffect(() => {
@@ -52,27 +84,44 @@ const AssessmentQuiz = ({ assessment, dayId, onComplete }) => {
   };
 
   const handleNext = () => {
-    if (currentQuestion < assessment.questions.length - 1) {
+    if (currentQuestion < sectionQuestions.length - 1) {
       setCurrentQuestion(prev => prev + 1);
+    } else if (hasSections && currentSection < assessment.sections.length - 1) {
+      // Move to next section
+      setCurrentSection(prev => prev + 1);
+      setCurrentQuestion(0);
     }
   };
 
   const handlePrevious = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(prev => prev - 1);
+    } else if (hasSections && currentSection > 0) {
+      // Move to previous section
+      setCurrentSection(prev => prev - 1);
+      const prevSection = assessment.sections[currentSection - 1];
+      setCurrentQuestion(prevSection.questions.length - 1);
     }
   };
 
+  const handleSectionChange = (sectionIndex) => {
+    setCurrentSection(sectionIndex);
+    setCurrentQuestion(0);
+  };
+
   const handleSubmit = () => {
-    const score = calculateScore(answers, assessment);
+    const assessmentForScore = {
+      ...assessment,
+      questions: allQuestions
+    };
+    const score = calculateScore(answers, assessmentForScore);
     setResults(score);
     setShowResults(true);
     
-    // Save to localStorage
     saveAssessmentResult(dayId, {
       ...score,
       answers,
-      questions: assessment.questions.length
+      questions: allQuestions.length
     });
     
     if (onComplete) {
@@ -84,25 +133,37 @@ const AssessmentQuiz = ({ assessment, dayId, onComplete }) => {
     return Object.keys(answers).length;
   };
 
-  const question = assessment.questions[currentQuestion];
-  const isLastQuestion = currentQuestion === assessment.questions.length - 1;
+  const getSectionAnsweredCount = (section) => {
+    return section.questions.filter(q => answers[q.id] !== undefined).length;
+  };
+
+  const question = sectionQuestions[currentQuestion];
+  const isLastQuestionInSection = currentQuestion === sectionQuestions.length - 1;
+  const isLastSection = !hasSections || currentSection === assessment.sections.length - 1;
   const answeredCount = getAnsweredCount();
-  const totalQuestions = assessment.questions.length;
+  const totalQuestions = allQuestions.length;
 
   if (showResults && results) {
-    return <ResultsView results={results} assessment={assessment} answers={answers} dayId={dayId} />;
+    return <ResultsView results={results} assessment={{...assessment, questions: allQuestions}} answers={answers} dayId={dayId} reviewMode={reviewMode} />;
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-6xl mx-auto">
       {/* Header */}
       <div className="card mb-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">{assessment.title}</h2>
-            <p className="text-sm text-gray-600 mt-1">
-              Question {currentQuestion + 1} of {totalQuestions}
-            </p>
+            {hasSections && (
+              <p className="text-sm text-gray-600 mt-1">
+                {currentSectionData.title} - Question {currentQuestion + 1} of {sectionQuestions.length}
+              </p>
+            )}
+            {!hasSections && (
+              <p className="text-sm text-gray-600 mt-1">
+                Question {currentQuestion + 1} of {totalQuestions}
+              </p>
+            )}
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-gray-700">
@@ -114,16 +175,63 @@ const AssessmentQuiz = ({ assessment, dayId, onComplete }) => {
           </div>
         </div>
 
+        {/* Section Tabs */}
+        {hasSections && (
+          <div className="mb-4 border-b border-gray-200">
+            <div className="flex gap-2 overflow-x-auto">
+              {assessment.sections.map((section, index) => {
+                const sectionAnswered = getSectionAnsweredCount(section);
+                const sectionTotal = section.questions.length;
+                const isComplete = sectionAnswered === sectionTotal;
+                
+                return (
+                  <button
+                    key={section.id}
+                    onClick={() => handleSectionChange(index)}
+                    className={`
+                      px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors
+                      ${currentSection === index 
+                        ? 'border-primary-600 text-primary-600' 
+                        : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300'
+                      }
+                    `}
+                  >
+                    <div className="flex items-center gap-2">
+                      <span>{section.title.split(':')[0]}</span>
+                      {isComplete && (
+                        <CheckCircle2 className="w-4 h-4 text-green-600" />
+                      )}
+                      <span className="text-xs text-gray-500">
+                        ({sectionAnswered}/{sectionTotal})
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Section Description */}
+        {hasSections && currentSectionData.description && (
+          <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+            <div className="flex items-start gap-2">
+              <BookOpen className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-blue-900">{currentSectionData.description}</p>
+            </div>
+          </div>
+        )}
+
         {/* Progress Bar */}
         <div className="mb-4">
           <div className="flex justify-between text-sm text-gray-600 mb-2">
-            <span>Progress</span>
+            <span>Overall Progress</span>
             <span>{answeredCount} / {totalQuestions} answered</span>
           </div>
           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
             <div 
               className="h-full bg-primary-600 transition-all duration-300"
-              style={{ width: `${((currentQuestion + 1) / totalQuestions) * 100}%` }}
+              style={{ width: `${(answeredCount / totalQuestions) * 100}%` }}
             />
           </div>
         </div>
@@ -187,7 +295,7 @@ const AssessmentQuiz = ({ assessment, dayId, onComplete }) => {
       <div className="flex items-center justify-between gap-4">
         <button
           onClick={handlePrevious}
-          disabled={currentQuestion === 0}
+          disabled={currentQuestion === 0 && currentSection === 0}
           className="btn-secondary flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ArrowLeft className="w-4 h-4" />
@@ -203,12 +311,12 @@ const AssessmentQuiz = ({ assessment, dayId, onComplete }) => {
           )}
         </div>
 
-        {!isLastQuestion ? (
+        {!(isLastQuestionInSection && isLastSection) ? (
           <button
             onClick={handleNext}
             className="btn-primary flex items-center gap-2"
           >
-            Next
+            {isLastQuestionInSection ? 'Next Section' : 'Next'}
             <ArrowRight className="w-4 h-4" />
           </button>
         ) : (
@@ -337,7 +445,7 @@ const ShortAnswerQuestion = ({ question, answer, onAnswer }) => {
 };
 
 // Results View Component
-const ResultsView = ({ results, assessment, answers, dayId }) => {
+const ResultsView = ({ results, assessment, answers, dayId, reviewMode = false }) => {
   const navigate = useNavigate();
 
   return (
@@ -385,18 +493,30 @@ const ResultsView = ({ results, assessment, answers, dayId }) => {
 
         {/* Actions */}
         <div className="flex flex-wrap gap-4 justify-center">
-          <button
-            onClick={() => navigate(`/day/${dayId}`)}
-            className="btn-primary"
-          >
-            Back to Lesson
-          </button>
-          <button
-            onClick={() => window.location.reload()}
-            className="btn-secondary"
-          >
-            Retake Assessment
-          </button>
+          {!reviewMode && (
+            <>
+              <button
+                onClick={() => navigate(`/day/${dayId}`)}
+                className="btn-primary"
+              >
+                Back to Lesson
+              </button>
+              <button
+                onClick={() => window.location.reload()}
+                className="btn-secondary"
+              >
+                Retake Assessment
+              </button>
+            </>
+          )}
+          {reviewMode && (
+            <button
+              onClick={() => navigate(`/day/${dayId}/assessment`)}
+              className="btn-primary"
+            >
+              Back to Assessment
+            </button>
+          )}
         </div>
       </div>
 

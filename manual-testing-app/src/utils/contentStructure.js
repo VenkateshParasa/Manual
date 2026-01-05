@@ -80,13 +80,13 @@ export const courseStructure = {
         {
           id: 'day12',
           title: 'Day 12: Regression & Smoke Testing',
-          file: 'Week2_Day12_Regression_Smoke_Testing.md',
+          file: 'Week2_Day12_Regression_Smoke_Testing_Strategies.md',
           completed: false
         },
         {
           id: 'day13',
           title: 'Day 13: Exploratory Testing',
-          file: 'Week2_Day13_Exploratory_Testing.md',
+          file: 'Week2_Day13_Exploratory_Testing_SBTM.md',
           completed: false
         },
         {
@@ -122,7 +122,7 @@ export const courseStructure = {
         {
           id: 'day18',
           title: 'Day 18: Test Tools & Systems',
-          file: 'Week3_Day18_Test_Tools_Systems.md',
+          file: 'Week3_Day18_Test_Tools.md',
           completed: false
         },
         {
