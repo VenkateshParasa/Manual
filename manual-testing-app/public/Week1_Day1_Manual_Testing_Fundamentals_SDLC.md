@@ -101,37 +101,37 @@
 
 #### Manual Testing is Preferred When:
 
-✅ **Short-Term Projects**
+- ✅ **Short-Term Projects**
 - One-time testing needs
 - POC or MVP validation
 - Quick turnaround required
 - Budget constraints
 
-✅ **Exploratory Testing**
+- ✅ **Exploratory Testing**
 - Learning application behavior
 - Finding unknown defects
 - Creative test scenario design
 - Adaptive testing approach
 
-✅ **Usability & UX Testing**
+- ✅ **Usability & UX Testing**
 - Subjective evaluation
 - User-friendliness assessment
 - Visual aesthetics validation
 - Accessibility compliance
 
-✅ **New Features**
+- ✅ **New Features**
 - Requirements still evolving
 - First-time feature testing
 - Frequent changes expected
 - Unstable application
 
-✅ **Complex Scenarios**
+- ✅ **Complex Scenarios**
 - Multi-system integration
 - Real-world user journeys
 - Context-dependent testing
 - Business logic validation
 
-✅ **Small Changes**
+- ✅ **Small Changes**
 - Minor UI updates
 - Text content changes
 - Simple bug fixes
@@ -139,31 +139,31 @@
 
 #### Automated Testing is Preferred When:
 
-✅ **Regression Testing**
+- ✅ **Regression Testing**
 - Repetitive test execution
 - Stable test cases
 - Large test suite
 - Frequent releases
 
-✅ **Performance Testing**
+- ✅ **Performance Testing**
 - Load and stress testing
 - Scalability testing
 - Concurrent user simulation
 - Response time measurement
 
-✅ **Data-Driven Testing**
+- ✅ **Data-Driven Testing**
 - Multiple data combinations
 - Large datasets
 - Database validation
 - API testing
 
-✅ **Cross-Platform Testing**
+- ✅ **Cross-Platform Testing**
 - Multiple browsers
 - Multiple OS versions
 - Multiple devices
 - Multiple configurations
 
-✅ **Continuous Integration**
+- ✅ **Continuous Integration**
 - Frequent code changes
 - DevOps pipeline
 - Build verification
@@ -240,6 +240,8 @@ Sequential development approach where each phase must be completed before the ne
 Requirements → Design → Implementation → Testing → Deployment → Maintenance
 ```
 
+
+
 #### Testing Approach:
 - **When**: Separate phase after development complete
 - **Who**: Dedicated QA team
@@ -283,16 +285,16 @@ Requirements → Design → Implementation → Testing → Deployment → Mainte
 - Regression testing
 
 #### Advantages for Testing:
-✅ Well-documented requirements
-✅ Clear entry/exit criteria
-✅ Comprehensive test planning time
-✅ Dedicated testing phase
+- ✅ Well-documented requirements
+- ✅ Clear entry/exit criteria
+- ✅ Comprehensive test planning time
+- ✅ Dedicated testing phase
 
 #### Disadvantages for Testing:
-❌ Late defect detection (expensive to fix)
-❌ No early feedback
-❌ Testing becomes bottleneck
-❌ Requirements changes difficult
+- ❌ Late defect detection (expensive to fix)
+- ❌ No early feedback
+- ❌ Testing becomes bottleneck
+- ❌ Requirements changes difficult
 
 #### Best Suited For:
 - Government projects
@@ -322,6 +324,8 @@ Iterative and incremental approach with short development cycles (sprints) and c
 ```
 Sprint Planning → Daily Standups → Development & Testing → Sprint Review → Retrospective
 ```
+
+
 
 #### Testing Approach:
 - **When**: Continuous throughout sprint
@@ -380,29 +384,29 @@ Sprint Planning → Daily Standups → Development & Testing → Sprint Review �
 #### Definition of Done (DoD) - Testing Perspective:
 
 A user story is "Done" when:
-✅ All acceptance criteria met
-✅ Unit tests passed
-✅ Integration tests passed
-✅ Code reviewed
-✅ Functional testing completed
-✅ No critical/high defects
-✅ **Regression tests passed**
-✅ **Test cases documented**
-✅ **Automation coverage achieved**
-✅ Documentation updated
+- ✅ All acceptance criteria met
+- ✅ Unit tests passed
+- ✅ Integration tests passed
+- ✅ Code reviewed
+- ✅ Functional testing completed
+- ✅ No critical/high defects
+- ✅ **Regression tests passed**
+- ✅ **Test cases documented**
+- ✅ **Automation coverage achieved**
+- ✅ Documentation updated
 
 #### Advantages for Testing:
-✅ Early and continuous testing
-✅ Quick feedback loops
-✅ Defects found and fixed quickly
-✅ Better collaboration
-✅ Reduced testing bottleneck
+- ✅ Early and continuous testing
+- ✅ Quick feedback loops
+- ✅ Defects found and fixed quickly
+- ✅ Better collaboration
+- ✅ Reduced testing bottleneck
 
 #### Disadvantages for Testing:
-❌ Less documentation
-❌ Constant context switching
-❌ Regression burden increases
-❌ Requires high skill level
+- ❌ Less documentation
+- ❌ Constant context switching
+- ❌ Regression burden increases
+- ❌ Requires high skill level
 
 #### Best Suited For:
 - Web applications
@@ -431,11 +435,15 @@ Traditional Waterfall would have taken 3 months for both features combined.
 #### Overview:
 Extension of Waterfall where each development phase has corresponding testing phase.
 
+
+
 #### V-Model Structure:
 
 ```
 Requirements  ←→  User Acceptance Testing (UAT)
      ↓                        ↑
+
+
 System Design ←→  System Testing
      ↓                        ↑
 Architecture  ←→  Integration Testing
@@ -500,17 +508,17 @@ Module Design ←→  Unit Testing
 - UAT
 
 #### Advantages for Testing:
-✅ Early test planning
-✅ Clear test objectives per level
-✅ High reliability achieved
-✅ Defects caught at right level
-✅ Traceability between phases
+- ✅ Early test planning
+- ✅ Clear test objectives per level
+- ✅ High reliability achieved
+- ✅ Defects caught at right level
+- ✅ Traceability between phases
 
 #### Disadvantages for Testing:
-❌ Rigid and inflexible
-❌ Expensive
-❌ Heavy documentation
-❌ Late product availability
+- ❌ Rigid and inflexible
+- ❌ Expensive
+- ❌ Heavy documentation
+- ❌ Late product availability
 
 #### Best Suited For:
 - Healthcare systems
@@ -555,6 +563,8 @@ Module Design ←→  Unit Testing
 
 ---
 
+
+
 ### 2.4 DevOps and Continuous Testing
 
 #### Overview:
@@ -564,25 +574,39 @@ Cultural and technical movement emphasizing collaboration between development an
 ```
 Plan → Code → Build → Test → Release → Deploy → Operate → Monitor
                 ↑                                               ↓
+
+
+
+
                 └───────────── Continuous Feedback ─────────────┘
 ```
+
+
 
 #### Continuous Testing in DevOps:
 
 **Continuous Integration (CI):**
 ```
+
+
 Code Commit → Automated Build → Unit Tests → Integration Tests → Report
 ```
+
+
 
 **Continuous Delivery (CD):**
 ```
 CI Success → Staging Deployment → Automated Tests → Manual Approval → Production
 ```
 
+
+
 **Continuous Deployment:**
 ```
 CI Success → Automated Tests → Automated Production Deployment → Monitoring
 ```
+
+
 
 #### Testing Layers in DevOps:
 
@@ -658,17 +682,17 @@ While DevOps emphasizes automation, manual testing still plays crucial roles:
 - **Manual**: Exploratory, usability, new features
 
 #### Advantages for Testing:
-✅ Rapid feedback (minutes vs days)
-✅ Early defect detection
-✅ Reduced regression burden
-✅ Higher quality releases
-✅ Faster time to market
+- ✅ Rapid feedback (minutes vs days)
+- ✅ Early defect detection
+- ✅ Reduced regression burden
+- ✅ Higher quality releases
+- ✅ Faster time to market
 
 #### Disadvantages for Testing:
-❌ High initial setup cost
-❌ Requires automation expertise
-❌ Cultural change needed
-❌ Tool maintenance overhead
+- ❌ High initial setup cost
+- ❌ Requires automation expertise
+- ❌ Cultural change needed
+- ❌ Tool maintenance overhead
 
 #### Best Suited For:
 - Cloud-native applications
@@ -696,6 +720,8 @@ While DevOps emphasizes automation, manual testing still plays crucial roles:
 1. Code commit → Unit tests (5 min)
 2. Build → Integration tests (15 min)
 3. Deploy to staging → Smoke tests (10 min)
+
+
 4. Automated E2E tests (15 min)
 5. Deploy to production → Canary testing
 6. Full rollout → Monitoring
@@ -717,6 +743,8 @@ While DevOps emphasizes automation, manual testing still plays crucial roles:
 ```
 Requirements → Design → Development → Testing → Deployment
                                         ↑
+
+
                                   Testing starts here
 ```
 
@@ -799,10 +827,10 @@ Testing involvement from beginning
 
 #### Challenges:
 
-❌ Cultural resistance to change
-❌ Requires tester skill enhancement
-❌ Initial productivity dip
-❌ Communication overhead
+- ❌ Cultural resistance to change
+- ❌ Requires tester skill enhancement
+- ❌ Initial productivity dip
+- ❌ Communication overhead
 
 **Real-World Example:**
 *E-commerce Platform Implementation*
@@ -859,9 +887,9 @@ Testing involvement from beginning
 Understand and analyze requirements from a testing perspective.
 
 #### Entry Criteria:
-✅ Requirements document available (BRD, FRS, User Stories)
-✅ Stakeholders available for clarification
-✅ Business requirements finalized
+- ✅ Requirements document available (BRD, FRS, User Stories)
+- ✅ Stakeholders available for clarification
+- ✅ Business requirements finalized
 
 #### Activities:
 
@@ -891,16 +919,16 @@ Understand and analyze requirements from a testing perspective.
 - Create automation strategy
 
 #### Deliverables:
-📄 Requirements Traceability Matrix (RTM)
-📄 Automation Feasibility Report
-📄 List of questions/clarifications
-📄 Test types identified
+- 📄 Requirements Traceability Matrix (RTM)
+- 📄 Automation Feasibility Report
+- 📄 List of questions/clarifications
+- 📄 Test types identified
 
 #### Exit Criteria:
-✅ All requirements analyzed
-✅ RTM created and reviewed
-✅ Testability concerns addressed
-✅ Testing types identified
+- ✅ All requirements analyzed
+- ✅ RTM created and reviewed
+- ✅ Testability concerns addressed
+- ✅ Testing types identified
 
 **Example Scenario - E-commerce Login:**
 
@@ -932,10 +960,10 @@ Understand and analyze requirements from a testing perspective.
 Create comprehensive test strategy and plan for the project.
 
 #### Entry Criteria:
-✅ Requirements document available
-✅ RTM created
-✅ Project scope defined
-✅ Resources identified
+- ✅ Requirements document available
+- ✅ RTM created
+- ✅ Project scope defined
+- ✅ Resources identified
 
 #### Activities:
 
@@ -970,16 +998,16 @@ Create comprehensive test strategy and plan for the project.
 - Plan tool setup and training
 
 #### Deliverables:
-📄 Test Plan document (IEEE 829)
-📄 Test Strategy document
-📄 Test Effort Estimation
-📄 Resource allocation plan
+- 📄 Test Plan document (IEEE 829)
+- 📄 Test Strategy document
+- 📄 Test Effort Estimation
+- 📄 Resource allocation plan
 
 #### Exit Criteria:
-✅ Test plan reviewed and approved
-✅ Resources confirmed
-✅ Risks identified and mitigation planned
-✅ Tools identified
+- ✅ Test plan reviewed and approved
+- ✅ Resources confirmed
+- ✅ Risks identified and mitigation planned
+- ✅ Tools identified
 
 **Example Test Plan Structure:**
 
@@ -1041,10 +1069,10 @@ TEST PLAN: E-commerce Checkout Module
 Design and document detailed test cases, test scripts, and test data.
 
 #### Entry Criteria:
-✅ Requirements finalized
-✅ Test plan approved
-✅ RTM available
-✅ Test environment details available
+- ✅ Requirements finalized
+- ✅ Test plan approved
+- ✅ RTM available
+- ✅ Test environment details available
 
 #### Activities:
 
@@ -1074,30 +1102,34 @@ Design and document detailed test cases, test scripts, and test data.
 - Walkthrough with stakeholders
 - Update based on feedback
 
+
+
 **6. RTM Update:**
 - Map test cases to requirements
 - Ensure complete coverage
 - Identify coverage gaps
 
 #### Deliverables:
-📄 Test cases (with IDs)
-📄 Test scenarios
-📄 Test scripts
-📄 Test data sets
-📄 Updated RTM
+- 📄 Test cases (with IDs)
+- 📄 Test scenarios
+- 📄 Test scripts
+- 📄 Test data sets
+- 📄 Updated RTM
 
 #### Exit Criteria:
-✅ All test cases designed and documented
-✅ Test cases reviewed and approved
-✅ Test data prepared
-✅ RTM updated with test case mapping
-✅ Adequate coverage achieved
+- ✅ All test cases designed and documented
+- ✅ Test cases reviewed and approved
+- ✅ Test data prepared
+- ✅ RTM updated with test case mapping
+- ✅ Adequate coverage achieved
 
 **Example Test Case:**
 
 ```
 Test Case ID: TC_LOGIN_001
 Title: Verify login with valid email and password
+
+
 Module: User Authentication
 Priority: P0
 Test Design Technique: Positive testing
@@ -1151,10 +1183,10 @@ This ensures comprehensive coverage of all scenarios.
 Prepare and configure testing environment including hardware, software, network, and test data.
 
 #### Entry Criteria:
-✅ Test plan approved
-✅ Test environment requirements identified
-✅ Hardware/software available
-✅ Access permissions granted
+- ✅ Test plan approved
+- ✅ Test environment requirements identified
+- ✅ Hardware/software available
+- ✅ Access permissions granted
 
 #### Activities:
 
@@ -1187,17 +1219,17 @@ Prepare and configure testing environment including hardware, software, network,
 - Conduct knowledge transfer
 
 #### Deliverables:
-📄 Test environment setup document
-📄 Smoke test results
-📄 Environment readiness report
-📄 Access credentials document
+- 📄 Test environment setup document
+- 📄 Smoke test results
+- 📄 Environment readiness report
+- 📄 Access credentials document
 
 #### Exit Criteria:
-✅ Test environment setup complete
-✅ Application build deployed
-✅ Smoke test passed
-✅ Test data loaded
-✅ Environment declared ready for testing
+- ✅ Test environment setup complete
+- ✅ Application build deployed
+- ✅ Smoke test passed
+- ✅ Test data loaded
+- ✅ Environment declared ready for testing
 
 **Example Environment Specification:**
 
@@ -1235,11 +1267,11 @@ Test Data:
 - Payment: Test credit cards
 
 Smoke Test Results:
-✅ Application accessible
-✅ Login successful
-✅ Database connectivity verified
-✅ API responding
-✅ All critical features working
+- ✅ Application accessible
+- ✅ Login successful
+- ✅ Database connectivity verified
+- ✅ API responding
+- ✅ All critical features working
 ```
 
 **Common Challenges & Solutions:**
@@ -1260,11 +1292,11 @@ Smoke Test Results:
 Execute test cases, log defects, and track testing progress.
 
 #### Entry Criteria:
-✅ Test cases reviewed and approved
-✅ Test environment ready
-✅ Build deployed and smoke test passed
-✅ Test data available
-✅ Resources assigned
+- ✅ Test cases reviewed and approved
+- ✅ Test environment ready
+- ✅ Build deployed and smoke test passed
+- ✅ Test data available
+- ✅ Resources assigned
 
 #### Activities:
 
@@ -1289,6 +1321,8 @@ Execute test cases, log defects, and track testing progress.
 **4. Regression Testing:**
 - Execute regression test suite
 - Verify no new defects introduced
+
+
 - Test impacted areas
 
 **5. Test Execution Reporting:**
@@ -1298,24 +1332,28 @@ Execute test cases, log defects, and track testing progress.
 - Update RTM with execution status
 
 #### Deliverables:
-📄 Test execution results
-📄 Defect reports
-📄 Test logs
-📄 Test summary reports (daily/weekly)
-📄 Updated RTM
+- 📄 Test execution results
+- 📄 Defect reports
+- 📄 Test logs
+- 📄 Test summary reports (daily/weekly)
+- 📄 Updated RTM
 
 #### Exit Criteria:
-✅ All planned test cases executed
-✅ Critical/High defects resolved
-✅ Pass percentage meets threshold (e.g., 95%)
-✅ Regression testing completed
-✅ No open blockers
+- ✅ All planned test cases executed
+- ✅ Critical/High defects resolved
+- ✅ Pass percentage meets threshold (e.g., 95%)
+- ✅ Regression testing completed
+
+
+- ✅ No open blockers
 
 **Test Execution Workflow:**
 
 ```
 1. Pick test case → 2. Setup preconditions → 3. Execute steps
                                                       ↓
+
+
                                                4. Compare results
                                                       ↓
                                     ┌─────────────────┴─────────────────┐
@@ -1336,6 +1374,8 @@ Execute test cases, log defects, and track testing progress.
 ```
 TEST EXECUTION REPORT - Day 5
 Project: E-commerce Checkout
+
+
 Date: January 4, 2026
 Build: Build-456
 
@@ -1384,10 +1424,10 @@ Payment gateway blocker is major concern. Developer working on fix, ETA: Tomorro
 Formally close testing activities, prepare final reports, and conduct lessons learned.
 
 #### Entry Criteria:
-✅ Test execution completed
-✅ Exit criteria met
-✅ Critical defects resolved
-✅ Stakeholder approval obtained
+- ✅ Test execution completed
+- ✅ Exit criteria met
+- ✅ Critical defects resolved
+- ✅ Stakeholder approval obtained
 
 #### Activities:
 
@@ -1412,6 +1452,8 @@ Formally close testing activities, prepare final reports, and conduct lessons le
 **4. Lessons Learned:**
 - Conduct retrospective meeting
 - Document what went well
+
+
 - Document improvement areas
 - Share best practices
 
@@ -1428,23 +1470,25 @@ Formally close testing activities, prepare final reports, and conduct lessons le
 - Close testing phase officially
 
 #### Deliverables:
-📄 Test Summary Report
-📄 Test Closure Report
-📄 Test Metrics Report
-📄 Lessons Learned Document
-📄 Sign-off document
+- 📄 Test Summary Report
+- 📄 Test Closure Report
+- 📄 Test Metrics Report
+- 📄 Lessons Learned Document
+- 📄 Sign-off document
 
 #### Exit Criteria:
-✅ Test summary report prepared
-✅ All artifacts archived
-✅ Lessons learned documented
-✅ Sign-off obtained from stakeholders
+- ✅ Test summary report prepared
+- ✅ All artifacts archived
+- ✅ Lessons learned documented
+- ✅ Sign-off obtained from stakeholders
 
 **Example Test Summary Report:**
 
 ```
 TEST SUMMARY REPORT
 Project: E-commerce Checkout Module
+
+
 Release: v2.5.0
 Testing Period: Dec 15, 2025 - Jan 4, 2026
 Prepared by: QA Team
@@ -1482,8 +1526,8 @@ TEST METRICS:
 - Pass Percentage: 94%
 
 RECOMMENDATIONS:
-✅ Application ready for release
-✅ Monitor deferred defects in next release
+- ✅ Application ready for release
+- ✅ Monitor deferred defects in next release
 ⚠️ Add automated regression for checkout flow
 ⚠️ Improve payment gateway error handling
 
@@ -1562,11 +1606,11 @@ Replacing 20-year-old COBOL-based system with modern Java-based platform.
 - **ROI: 314%**
 
 **Lessons Learned:**
-✅ Early QA involvement prevented requirement issues
-✅ Comprehensive test planning paid off
-✅ Adequate testing time ensured quality
-❌ Long testing phase delayed release
-❌ Waterfall rigidity caused some unnecessary re-work
+- ✅ Early QA involvement prevented requirement issues
+- ✅ Comprehensive test planning paid off
+- ✅ Adequate testing time ensured quality
+- ❌ Long testing phase delayed release
+- ❌ Waterfall rigidity caused some unnecessary re-work
 
 ---
 
@@ -1657,16 +1701,16 @@ New food delivery app competing with established players.
 - 4 Developers (also writing unit tests)
 
 **Benefits of Agile Testing:**
-✅ Quick feedback loops
-✅ Defects fixed immediately
-✅ Continuous collaboration
-✅ Early automation paid off
-✅ High customer satisfaction (4.6/5 rating)
+- ✅ Quick feedback loops
+- ✅ Defects fixed immediately
+- ✅ Continuous collaboration
+- ✅ Early automation paid off
+- ✅ High customer satisfaction (4.6/5 rating)
 
 **Challenges:**
-❌ Regression suite grew quickly
-❌ Context switching between testing and planning
-❌ Pressure to complete testing in 2-week sprints
+- ❌ Regression suite grew quickly
+- ❌ Context switching between testing and planning
+- ❌ Pressure to complete testing in 2-week sprints
 
 **Key Success Factor:**
 Definition of Done included "All tests passed" - this forced quality conversations daily.
@@ -1763,6 +1807,8 @@ HIPAA-compliant system for patient records, appointments, and billing.
 - UAT: 45 defects (7%)
 - **Total: 591 defects found before production**
 
+
+
 **Production Performance:**
 - Production defects (first year): 8
 - Defect leakage: 1.3% (exceptional)
@@ -1771,11 +1817,11 @@ HIPAA-compliant system for patient records, appointments, and billing.
 
 **Why V-Model Worked:**
 
-✅ **Early Test Planning:** Test cases designed before development
-✅ **Level-Specific Testing:** Right defects caught at right level
-✅ **Traceability:** Clear mapping from requirements to tests
-✅ **Regulatory Compliance:** Rigorous documentation satisfied auditors
-✅ **High Reliability:** Mission-critical system required zero errors
+- ✅ **Early Test Planning:** Test cases designed before development
+- ✅ **Level-Specific Testing:** Right defects caught at right level
+- ✅ **Traceability:** Clear mapping from requirements to tests
+- ✅ **Regulatory Compliance:** Rigorous documentation satisfied auditors
+- ✅ **High Reliability:** Mission-critical system required zero errors
 
 **Cost Analysis:**
 - Development + Testing cost: $4.2M
@@ -1798,6 +1844,8 @@ Cloud-based CRM with 50,000 customers, 4-5 releases per week.
 ```
 Code Commit → Build → Unit Tests → Integration Tests → Deploy to Staging
      ↓          ↓         ↓             ↓                    ↓
+
+
   <1 min     2 min     3 min         5 min               2 min
                                                             ↓
                                                   Automated E2E Tests
@@ -1939,11 +1987,11 @@ Despite heavy automation, manual testing remains critical:
 
 **Success Factors:**
 
-✅ **Culture:** Everyone owns quality
-✅ **Automation:** 90% test coverage
-✅ **Fast Feedback:** Pipeline completes in 50 minutes
-✅ **Monitoring:** Production issues detected in real-time
-✅ **Continuous Improvement:** Weekly retrospectives
+- ✅ **Culture:** Everyone owns quality
+- ✅ **Automation:** 90% test coverage
+- ✅ **Fast Feedback:** Pipeline completes in 50 minutes
+- ✅ **Monitoring:** Production issues detected in real-time
+- ✅ **Continuous Improvement:** Weekly retrospectives
 
 ---
 

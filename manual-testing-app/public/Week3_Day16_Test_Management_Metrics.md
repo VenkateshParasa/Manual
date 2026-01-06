@@ -46,6 +46,8 @@ Estimation is not a commitment—it's an educated guess\!
 ### 1.2 Work Breakdown Structure (WBS)
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 WORK BREAKDOWN STRUCTURE (WBS)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -913,6 +915,8 @@ ROI: ($55,000 - $5,000) / $5,000 × 100% = 1000%\!
 ### 3.1 Daily Test Status Report
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 DAILY TEST STATUS REPORT TEMPLATE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

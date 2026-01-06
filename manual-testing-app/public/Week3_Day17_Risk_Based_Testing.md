@@ -19,6 +19,8 @@
 ### 1.1 What is Risk-Based Testing?
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 RISK-BASED TESTING (RBT)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1810,6 +1812,8 @@ login("user1", "pass1")
 login("user2", "pass2")
 ```
 
+
+
 Benefits:
 ✓ Less code duplication
 ✓ Easier maintenance
@@ -1846,19 +1850,19 @@ CAUSES & FIXES:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Cause 1: Timing Issues
-❌ Test fails if page loads slowly
+- ❌ Test fails if page loads slowly
 ✓ Fix: Use explicit waits instead of fixed sleeps
 
 Cause 2: Test Interdependency
-❌ Test B fails if Test A didn't run first
+- ❌ Test B fails if Test A didn't run first
 ✓ Fix: Make tests independent, setup own preconditions
 
 Cause 3: External Dependencies
-❌ Test fails if external API is slow
+- ❌ Test fails if external API is slow
 ✓ Fix: Mock external services, use test doubles
 
 Cause 4: Race Conditions
-❌ Test fails intermittently due to async operations
+- ❌ Test fails intermittently due to async operations
 ✓ Fix: Proper synchronization, wait for completion
 
 Impact of Flaky Tests:
@@ -2422,11 +2426,15 @@ Format: Professional test strategy document (3-4 pages)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
+
+
 ---
 
 ## Assessment Questions
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ASSESSMENT QUESTIONS (25 Total)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

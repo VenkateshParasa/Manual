@@ -1,0 +1,347 @@
+/* Diagram Container */
+.diagram-container {
+  margin: 2rem 0;
+  text-align: center;
+  position: relative;
+}
+
+/* Diagram Image */
+.diagram-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.diagram-image:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.diagram-image:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 4px;
+}
+
+/* Diagram Caption */
+.diagram-caption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Loading State */
+.diagram-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.diagram-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.diagram-error {
+  padding: 2rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  text-align: center;
+  color: #991b1b;
+}
+
+.diagram-error-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  color: #dc2626;
+}
+
+.diagram-error-text {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.diagram-error-hint {
+  font-size: 0.875rem;
+  color: #b91c1c;
+}
+
+/* Lightbox */
+.diagram-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.diagram-lightbox-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  border-radius: 8px;
+  z-index: 10000;
+}
+
+.diagram-control-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.diagram-control-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.diagram-control-btn:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.diagram-control-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.diagram-close-btn {
+  background: rgba(239, 68, 68, 0.8);
+}
+
+.diagram-close-btn:hover {
+  background: rgba(239, 68, 68, 1);
+}
+
+.diagram-zoom-level {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  min-width: 50px;
+  text-align: center;
+}
+
+.diagram-lightbox-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 4rem 2rem 2rem;
+}
+
+.diagram-lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.diagram-lightbox-hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .diagram-container {
+    margin: 1.5rem 0;
+  }
+
+  .diagram-image {
+    max-width: 100%;
+  }
+
+  .diagram-lightbox-controls {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+
+  .diagram-control-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .diagram-control-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .diagram-zoom-level {
+    font-size: 0.75rem;
+    min-width: 40px;
+  }
+
+  .diagram-lightbox-content {
+    padding: 3rem 1rem 1rem;
+  }
+
+  .diagram-lightbox-hint {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .diagram-caption {
+    font-size: 0.75rem;
+  }
+
+  .diagram-error {
+    padding: 1.5rem 1rem;
+  }
+
+  .diagram-error-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .diagram-error-text {
+    font-size: 0.875rem;
+  }
+
+  .diagram-error-hint {
+    font-size: 0.75rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .diagram-lightbox {
+    display: none;
+  }
+
+  .diagram-image {
+    box-shadow: none;
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  .diagram-caption {
+    page-break-before: avoid;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .diagram-image {
+    border: 2px solid currentColor;
+  }
+
+  .diagram-error {
+    border-width: 2px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .diagram-image,
+  .diagram-lightbox,
+  .diagram-lightbox-image,
+  .diagram-control-btn {
+    transition: none;
+    animation: none;
+  }
+
+  .diagram-spinner {
+    animation: none;
+    border-top-color: transparent;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .diagram-image {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .diagram-caption {
+    color: #9ca3af;
+  }
+
+  .diagram-loading {
+    background: #1f2937;
+  }
+
+  .diagram-spinner {
+    border-color: #374151;
+    border-top-color: #60a5fa;
+  }
+
+  .diagram-error {
+    background: #7f1d1d;
+    border-color: #991b1b;
+    color: #fecaca;
+  }
+
+  .diagram-error-icon {
+    color: #f87171;
+  }
+
+  .diagram-error-hint {
+    color: #fca5a5;
+  }
+}

@@ -20,6 +20,8 @@
 ### 1.1 Exploratory Testing Deep Dive
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EXPLORATORY TESTING COMPREHENSIVE OVERVIEW
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -152,6 +154,8 @@ Addresses challenges while keeping exploratory benefits
 ### 1.2 Exploratory Testing Heuristics
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 TESTING HEURISTICS & TECHNIQUES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1109,19 +1113,19 @@ Good Charter:
 Poor Charter Examples:
 
 Too Broad:
-❌ "Test the entire application"
+- ❌ "Test the entire application"
    → Would take days, not one session
 
 Too Narrow:
-❌ "Verify login button is blue"
+- ❌ "Verify login button is blue"
    → Too trivial, not worth 90 minutes
 
 Vague:
-❌ "Test stuff and find bugs"
+- ❌ "Test stuff and find bugs"
    → No clear direction
 
 No Resources:
-❌ "Explore payment processing"
+- ❌ "Explore payment processing"
    → Missing: how to test, what to use
 
 CHARTER SIZING:
@@ -1931,7 +1935,7 @@ AREAS TESTED:
 HIGHLIGHTS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🔴 Critical SQL injection found in login
-✅ Payment integration working well
+- ✅ Payment integration working well
 ⚠️ Performance concerns with search (>5 sec response)
 
 NEXT WEEK PLAN:
@@ -1988,7 +1992,7 @@ Assessment: Good efficiency
 
 COVERAGE HEAT MAP:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ Well Covered (3+ sessions):
+- ✅ Well Covered (3+ sessions):
 - Authentication
 - Checkout
 - Payment
@@ -1998,7 +2002,7 @@ COVERAGE HEAT MAP:
 - Product Catalog
 - Order History
 
-❌ Not Covered:
+- ❌ Not Covered:
 - Reports
 - Admin Panel
 - Settings

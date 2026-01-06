@@ -42,6 +42,8 @@
 **Comparison:**
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CLIENT-SIDE vs SERVER-SIDE TESTING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -65,6 +67,8 @@ CLIENT-SIDE vs SERVER-SIDE TESTING
 **Example: Email Validation**
 
 ```javascript
+
+
 // CLIENT-SIDE (JavaScript)
 function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -359,12 +363,16 @@ Advantages:
 
 Limitations:
 ✗ Less precise
+
+
 ✗ Manual and time-consuming
 ```
 
 **Responsive Design Test Cases:**
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 RESPONSIVE DESIGN TEST SCENARIOS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -610,6 +618,8 @@ CROSS-BROWSER TESTING TOOLS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
+
+
 ---
 
 ## Functional Web Testing
@@ -619,6 +629,8 @@ CROSS-BROWSER TESTING TOOLS
 **Complete Form Testing Example:**
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 USER REGISTRATION FORM - COMPLETE TEST SCENARIOS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -901,6 +913,8 @@ TC-NAV-011: Jump to specific page
 ✓ Navigates on Enter or button click
 ```
 
+
+
 **4. Footer Navigation:**
 ```
 TC-NAV-012: Footer links
@@ -912,6 +926,8 @@ TC-NAV-012: Footer links
 
 **5. Back Button Behavior:**
 ```
+
+
 TC-NAV-013: Browser back button
 Scenario: Home → Products → Product Detail
 ✓ Click back from Product Detail → Returns to Products

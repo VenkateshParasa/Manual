@@ -20,6 +20,8 @@
 ### 1.1 Why Communication Matters in Testing
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 COMMUNICATION: THE CORNERSTONE OF QA SUCCESS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -102,6 +104,8 @@ COMMUNICATION CHANNELS IN QA:
 ### 1.2 Bug Communication Best Practices
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 COMMUNICATING BUGS EFFECTIVELY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -329,7 +333,7 @@ QA-SPECIFIC STANDUP TEMPLATE:
 POOR STANDUP:
 "I tested stuff yesterday. Will test more today. No blockers."
 
-❌ Problems:
+- ❌ Problems:
 - Too vague
 - No specifics
 - No value to team
@@ -349,7 +353,7 @@ Blockers:
 - Test environment down for 2 hours this morning (now resolved)
 - Waiting on test data refresh for international users testing"
 
-✅ Benefits:
+- ✅ Benefits:
 - Specific accomplishments
 - Clear plan
 - Blockers identified
@@ -415,7 +419,7 @@ If timezone differences, use Slack:
 Template:
 📅 Daily Update - [Date]
 
-✅ Yesterday:
+- ✅ Yesterday:
 - Completed X module testing
 - Found Y bugs (link)
 - Automated Z tests
@@ -553,7 +557,7 @@ Details: See BUG-789 in Jira [link]
 Best regards,
 Sarah (QA Lead)
 
-✅ Benefits:
+- ✅ Benefits:
 - Clear subject
 - Structured information
 - Options presented
@@ -566,11 +570,15 @@ Sarah (QA Lead)
 
 ---
 
+
+
 ## Stakeholder Management
 
 ### 2.1 Understanding Your Stakeholders
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STAKEHOLDER MAP FOR QA
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -836,7 +844,7 @@ Bad Response:
 Good Response:
 "Testing Status:
 
-✅ Critical path: 100% tested, all passing
+- ✅ Critical path: 100% tested, all passing
 🟡 Secondary features: 60% tested, 2 medium bugs open
 ⚠️  Edge cases: Not tested yet
 
@@ -980,10 +988,10 @@ Status: 🟢 On Track / 🟡 At Risk / 🔴 Blocked
 Progress: [X%] ([Y/Z] test cases executed)
 
 TODAY'S ACCOMPLISHMENTS:
-✅ Completed testing: [Module Name] (40 test cases)
-✅ Found: 3 bugs (1 High, 2 Medium) - See BUG-123, BUG-124, BUG-125
-✅ Automated: 10 test cases for shopping cart
-✅ Retested: BUG-100, BUG-101 (Both verified fixed)
+- ✅ Completed testing: [Module Name] (40 test cases)
+- ✅ Found: 3 bugs (1 High, 2 Medium) - See BUG-123, BUG-124, BUG-125
+- ✅ Automated: 10 test cases for shopping cart
+- ✅ Retested: BUG-100, BUG-101 (Both verified fixed)
 
 TOMORROW'S PLAN:
 → Test Payment Integration module (30 test cases)
@@ -1153,9 +1161,9 @@ Risks:
 ⚠️  Critical bug may delay release if not fixed by Wednesday
 
 Accomplishments:
-✅ Completed User Management module (100%)
-✅ Automated 25 test cases
-✅ Pass rate improved 3%
+- ✅ Completed User Management module (100%)
+- ✅ Automated 25 test cases
+- ✅ Pass rate improved 3%
 
 Next Week:
 → Complete remaining 150 test cases
@@ -1408,7 +1416,7 @@ Slide 4: Quality Metrics
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [Show pie chart of pass/fail]
 Results:
-✅ Passed: 475 (95%)
+- ✅ Passed: 475 (95%)
 ⚠️  Failed/Blocked: 25 (5%)
 
 [Show line graph of pass rate trend]
@@ -1432,11 +1440,11 @@ Deferred: 15 (22%)
 
 Slide 6: Key Achievements
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ All Critical Paths Tested
-✅ Zero Critical Defects
-✅ Automated 50 Test Cases
-✅ Improved Pass Rate by 10%
-✅ Reduced Defect Age to 2.5 days
+- ✅ All Critical Paths Tested
+- ✅ Zero Critical Defects
+- ✅ Automated 50 Test Cases
+- ✅ Improved Pass Rate by 10%
+- ✅ Reduced Defect Age to 2.5 days
 
 Slide 7: Risks & Mitigation
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1452,7 +1460,7 @@ Mitigation:
 
 Slide 8: Recommendation
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ APPROVE RELEASE
+- ✅ APPROVE RELEASE
 
 Confidence: HIGH
 
@@ -3024,7 +3032,7 @@ POOR STANDUP (Current):
 "Yesterday I tested stuff. Found some bugs. Today I'll test more stuff.
 No blockers."
 
-❌ Problems:
+- ❌ Problems:
 - Vague ("stuff", "some bugs")
 - No specifics or numbers
 - No context
@@ -3263,7 +3271,7 @@ Template (using Slack workflow automation):
 ```
 📅 Daily Update - [Date] - [Name]
 
-✅ COMPLETED TODAY:
+- ✅ COMPLETED TODAY:
 - [Module] testing: [X test cases]
 - Bugs found: [List with IDs]
 - Automation: [Progress]
@@ -3286,7 +3294,7 @@ Example:
 ```
 📅 Daily Update - Jan 10 - Priya (India)
 
-✅ COMPLETED TODAY:
+- ✅ COMPLETED TODAY:
 - Payment module: 25 test cases (22 passed, 3 failed)
 - BUG-567: Critical - CVV validation broken (logged)
 - BUG-568: Medium - Amount formatting (logged)

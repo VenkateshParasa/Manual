@@ -242,6 +242,8 @@ Sequential development approach where each phase must be completed before the ne
 Requirements → Design → Implementation → Testing → Deployment → Maintenance
 ```
 
+![Waterfall SDLC Flow](images/diagrams/week1/day1/w1_d1_flowchart_requirements-design-implementation-testing-deploym.svg)
+
 #### Testing Approach:
 - **When**: Separate phase after development complete
 - **Who**: Dedicated QA team
@@ -324,6 +326,8 @@ Iterative and incremental approach with short development cycles (sprints) and c
 ```
 Sprint Planning → Daily Standups → Development & Testing → Sprint Review → Retrospective
 ```
+
+![Agile Sprint Cycle](images/diagrams/week1/day1/w1_d1_flowchart_sprint-planning-daily-standups-development-testing.svg)
 
 #### Testing Approach:
 - **When**: Continuous throughout sprint
@@ -568,6 +572,8 @@ Plan → Code → Build → Test → Release → Deploy → Operate → Monitor
                 ↑                                               ↓
                 └───────────── Continuous Feedback ─────────────┘
 ```
+
+![DevOps Pipeline](images/diagrams/week1/day1/w1_d1_tree_plan-code-build-test-release-deploy-operate-monito.svg)
 
 #### Continuous Testing in DevOps:
 
@@ -1318,7 +1324,7 @@ Execute test cases, log defects, and track testing progress.
 ```
 1. Pick test case → 2. Setup preconditions → 3. Execute steps
                                                       ↓
-                                               4. Compare results
+                                                4. Compare results
                                                       ↓
                                     ┌─────────────────┴─────────────────┐
                                     ↓                                   ↓
@@ -1332,6 +1338,8 @@ Execute test cases, log defects, and track testing progress.
                                                                         ↓
                                                               9. Track till closure
 ```
+
+![Test Execution Workflow](images/diagrams/week1/day1/w1_d1_tree_1-pick-test-case-2-setup-preconditions-3-execute-s.svg)
 
 **Example Daily Test Execution Report:**
 

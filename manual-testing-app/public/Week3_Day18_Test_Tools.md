@@ -19,6 +19,8 @@
 ### 1.1 Introduction to Test Management
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 TEST MANAGEMENT TOOLS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -173,6 +175,8 @@ All Integrated for End-to-End Visibility
 ### 2.1 Jira - Industry Standard
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 JIRA - BUG TRACKING & PROJECT MANAGEMENT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -263,12 +267,16 @@ Required Fields:
    - Device: iPhone 13
    - OS: iOS 16.2
    - Browser: Safari
+
+
    - App Version: 2.5.1
    
    ATTACHMENTS:
    - Screenshot: login_bug.png
    - Video: bug_reproduction.mp4
    ```
+
+
 
 3. Priority:
    - Blocker (P0): Blocks testing/release
@@ -604,6 +612,8 @@ Button does not respond to clicks
 - OS: macOS Ventura
 - Version: v2.0.3
 
+
+
 ### Screenshots
 \![login-bug](screenshot.png)
 
@@ -613,6 +623,8 @@ Button does not respond to clicks
 ### Related Issues
 - Relates to #123
 ```
+
+
 
 4. AZURE DEVOPS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1268,6 +1280,8 @@ Example Slack Workflow:
 
 Morning Standup in #qa-team:
 ```
+
+
 @sarah: Good morning team\! Yesterday I completed
         regression testing for checkout module.
         Found 2 bugs (JIRA-123, JIRA-124).
@@ -1280,6 +1294,8 @@ Morning Standup in #qa-team:
 @lisa: Blocked on BUG-456. Waiting for dev fix.
        Today: Will test mobile app once unblocked.
 ```
+
+
 
 2. MICROSOFT TEAMS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1413,6 +1429,8 @@ Video Calls:
 └─→ Zoom / Microsoft Teams (meetings, demos)
 
 File Sharing:
+
+
 └─→ Google Drive / OneDrive (test reports, screenshots)
 
 Knowledge Management:
@@ -1428,6 +1446,8 @@ Knowledge Management:
 ### 5.1 Continuous Integration/Continuous Deployment
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CI/CD FOR QA ENGINEERS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -2415,6 +2435,8 @@ testing. Tests take 2 hours to run. How can you optimize?
 
 Answer:
 
+
+
 Optimization Strategies:
 
 1. Parallel Execution:
@@ -2433,10 +2455,14 @@ Optimization Strategies:
        }
    }
    ```
+
+
    Time: 2 hours → 45 minutes (if parallelized on 3 agents)
 
 2. Test Categorization:
    - Run smoke tests first (10 min)
+
+
    - If smoke passes, run full suite
    - If smoke fails, stop immediately (fail fast)
 
@@ -2458,6 +2484,8 @@ Optimization Strategies:
        }
    }
    ```
+
+
    Saves 5-10 minutes on dependency installation
 
 6. Containerization:
@@ -2585,6 +2613,8 @@ Solution: Structured Channel + Notification Architecture
 - Format: Structured message
 
 #qa-team
+
+
 - Purpose: General QA discussions
 - Notifications: Mentions only
 - Topics: Questions, updates, coordination
@@ -2609,6 +2639,8 @@ ELSE IF first success after failures
 THEN post "Build fixed\!" to #build-notifications
 ELSE don't post (avoid spam for every success)
 ```
+
+
 
 3. Notification Settings (Personal):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

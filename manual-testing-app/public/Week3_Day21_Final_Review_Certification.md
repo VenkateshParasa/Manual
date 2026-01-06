@@ -18,6 +18,8 @@
 ### Week 1: Testing Fundamentals (Days 1-7)
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 WEEK 1 REVIEW: TESTING FUNDAMENTALS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -246,6 +248,8 @@ Ensures: All requirements covered
 ### Week 2: Advanced Testing Concepts (Days 8-14)
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 WEEK 2 REVIEW: ADVANCED TESTING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

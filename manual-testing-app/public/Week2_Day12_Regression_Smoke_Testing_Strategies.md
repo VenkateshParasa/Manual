@@ -60,6 +60,8 @@ Regression: Re-test all login scenarios to ensure nothing broke
 ### 1.2 Types of Regression Testing
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 REGRESSION TESTING TYPES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -212,6 +214,8 @@ SELECTION MATRIX
 ### 1.3 Regression Testing Challenges
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 REGRESSION TESTING CHALLENGES & SOLUTIONS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

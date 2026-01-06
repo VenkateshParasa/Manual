@@ -10,6 +10,8 @@
 4. [Test Process Improvement Models](#test-process-improvement-models)
 5. [Agile & DevOps Best Practices](#agile-devops-best-practices)
 6. [Industry-Specific Testing](#industry-specific-testing)
+
+
 7. [Practical Exercises](#practical-exercises)
 8. [Assessment Questions](#assessment-questions)
 
@@ -130,6 +132,8 @@ SOFTWARE TESTING STANDARDS ECOSYSTEM
 
 STANDARDS HIERARCHY:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
 
 Level 1: International Standards (ISO/IEC)
           │
@@ -254,12 +258,16 @@ Action: Certification preparation
 Year 4:
 - External audit
 - ISO 29119 certification achieved
+
+
 - Continuous improvement process
 - Annual surveillance audits
 Action: Maintain and improve
 
 WHEN TO ADOPT STANDARDS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
 
 MUST Adopt:
 ✓ Regulated industries (healthcare, finance, aerospace)
@@ -342,6 +350,8 @@ Example Terms Defined:
 │                  │ test item                           │
 └──────────────────┴─────────────────────────────────────┘
 
+
+
 PART 2: TEST PROCESSES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -349,6 +359,8 @@ Purpose: Define testing processes at different levels
 
 THREE PROCESS LEVELS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
 
 1. ORGANIZATIONAL TEST PROCESS
    Scope: Entire organization
@@ -521,6 +533,8 @@ Mandatory Sections (ISO 29119-3):
 12. Staffing & Training Needs
 13. Schedule
 14. Risks & Contingencies
+
+
 15. Approvals
 
 Example Test Plan Excerpt:
@@ -533,6 +547,8 @@ Date: January 10, 2026
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. TEST PLAN IDENTIFIER: TP-ECOM-CHECKOUT-v1.2
+
+
 
 2. INTRODUCTION:
    This plan describes testing for checkout redesign (Release 3.5).
@@ -759,6 +775,8 @@ Split order into multiple transactions <$1000 each
 Attachments:
 - Screenshot: payment_error.png
 - Browser Console Log: console_log.txt
+
+
 - Network HAR file: network.har
 
 Assigned To: John Developer
@@ -774,6 +792,8 @@ PART 4: TEST TECHNIQUES
 Purpose: Standardized test design techniques
 
 CATEGORIES OF TEST TECHNIQUES:
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. Specification-Based (Black-Box):
@@ -1333,6 +1353,8 @@ Cost: $200-300 (varies by country)
 Validity: Lifetime
 
 SYLLABUS STRUCTURE:
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Chapter 1: Fundamentals of Testing (175 min)
@@ -1351,12 +1373,16 @@ Key Concepts:
 - Early testing saves time and money
 - Defects cluster together
 - Pesticide paradox
+
+
 - Testing is context-dependent
 - Absence-of-errors fallacy
 
 Example Question:
 "Which of the following is NOT one of the seven testing principles?
 a) Early testing
+
+
 b) Defect clustering
 c) 100% test coverage is achievable
 d) Testing is context dependent"
@@ -1378,6 +1404,8 @@ Test Levels:
 │ Level           │ Focus                            │
 ├─────────────────┼──────────────────────────────────┤
 │ Component       │ Individual units/modules         │
+
+
 │ (Unit) Testing  │ Typically by developers          │
 ├─────────────────┼──────────────────────────────────┤
 │ Integration     │ Interfaces between components    │
@@ -1398,6 +1426,8 @@ Test Types:
 
 Chapter 3: Static Testing (80 min)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
 
 Topics:
 ✓ Static testing basics
@@ -1422,6 +1452,8 @@ Chapter 4: Test Techniques (330 min)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Topics:
+
+
 ✓ Black-box test techniques
 ✓ White-box test techniques
 ✓ Experience-based test techniques
@@ -2649,16 +2681,16 @@ Example Checklist:
 ```
 USER STORY: US-234 - Add "Forgot Password" feature
 
-✅ Code written and reviewed
-✅ Unit tests: 15 tests, 85% coverage
-✅ Functional tests: 8 test cases (all passed)
-✅ Regression: 500 tests (498 passed, 2 unrelated failures)
-✅ Exploratory testing: 2 hours (no critical issues)
-✅ Security testing: Password reset token secure
-✅ Email template reviewed and approved
-✅ Zero critical bugs, 1 minor bug (deferred)
-✅ PO acceptance: Approved by Jane (2024-01-10)
-✅ Deployed to staging, smoke tests passed
+- ✅ Code written and reviewed
+- ✅ Unit tests: 15 tests, 85% coverage
+- ✅ Functional tests: 8 test cases (all passed)
+- ✅ Regression: 500 tests (498 passed, 2 unrelated failures)
+- ✅ Exploratory testing: 2 hours (no critical issues)
+- ✅ Security testing: Password reset token secure
+- ✅ Email template reviewed and approved
+- ✅ Zero critical bugs, 1 minor bug (deferred)
+- ✅ PO acceptance: Approved by Jane (2024-01-10)
+- ✅ Deployed to staging, smoke tests passed
 
 Status: DONE ✅
 ```

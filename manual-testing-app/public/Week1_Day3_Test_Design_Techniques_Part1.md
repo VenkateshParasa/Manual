@@ -29,6 +29,8 @@
 **Categories:**
 
 ```
+
+
 Test Design Techniques
 ├── Black Box (Specification-based)
 │   ├── Equivalence Partitioning
@@ -456,19 +458,19 @@ Total: 10 test cases
 ### 1.7 Advantages and Limitations of EP
 
 **Advantages:**
-✅ Reduces number of test cases dramatically
-✅ Ensures systematic coverage
-✅ Easy to understand and apply
-✅ Cost-effective
-✅ Identifies gaps in requirements
-✅ Applicable to all testing levels
+- ✅ Reduces number of test cases dramatically
+- ✅ Ensures systematic coverage
+- ✅ Easy to understand and apply
+- ✅ Cost-effective
+- ✅ Identifies gaps in requirements
+- ✅ Applicable to all testing levels
 
 **Limitations:**
-❌ Doesn't test boundary values (use BVA for that)
-❌ May miss defects at partition boundaries
-❌ Assumes all values in partition behave identically (may not always be true)
-❌ Requires clear requirements
-❌ Doesn't cover combinations (use decision tables)
+- ❌ Doesn't test boundary values (use BVA for that)
+- ❌ May miss defects at partition boundaries
+- ❌ Assumes all values in partition behave identically (may not always be true)
+- ❌ Requires clear requirements
+- ❌ Doesn't cover combinations (use decision tables)
 
 ---
 
@@ -533,6 +535,8 @@ else:
 
 **Visual Representation:**
 ```
+
+
 Invalid | Valid Range      | Invalid
 --------|------------------|--------
    17   | 18  19 ... 64 65 |   66
@@ -667,12 +671,16 @@ Hotel booking system - stay duration:
 
 **BVA for Stay Duration:**
 
+
+
 **Boundaries:**
 - Minimum: 1 night
 - Maximum: 30 nights
 
 **Test Values:**
 ```
+
+
 Minimum Boundary:
 - 0 nights (min-1) → Invalid
 - 1 night (min) → Valid
@@ -905,19 +913,19 @@ Total: 8 test cases for worst-case boundary coverage
 ### 2.8 Advantages and Limitations of BVA
 
 **Advantages:**
-✅ Highly effective at finding defects
-✅ Focuses on high-risk areas (boundaries)
-✅ Relatively simple to apply
-✅ Complements Equivalence Partitioning
-✅ Industry standard technique
-✅ Catches common programming errors
+- ✅ Highly effective at finding defects
+- ✅ Focuses on high-risk areas (boundaries)
+- ✅ Relatively simple to apply
+- ✅ Complements Equivalence Partitioning
+- ✅ Industry standard technique
+- ✅ Catches common programming errors
 
 **Limitations:**
-❌ Only applicable to ordered data (numbers, dates)
-❌ Doesn't test combinations effectively
-❌ May miss logic errors in middle of range
-❌ Assumes boundaries are well-defined
-❌ Can generate many test cases with multiple inputs
+- ❌ Only applicable to ordered data (numbers, dates)
+- ❌ Doesn't test combinations effectively
+- ❌ May miss logic errors in middle of range
+- ❌ Assumes boundaries are well-defined
+- ❌ Can generate many test cases with multiple inputs
 
 ---
 
@@ -928,6 +936,8 @@ Total: 8 test cases for worst-case boundary coverage
 **Definition:** A test design technique that captures business rules involving combinations of conditions and corresponding actions.
 
 **When to Use:**
+
+
 - Complex business logic
 - Multiple conditions affecting outcome
 - Different combinations of inputs produce different outputs
@@ -937,6 +947,8 @@ Total: 8 test cases for worst-case boundary coverage
 **Structure of Decision Table:**
 
 ```
+
+
 ┌─────────────────────────────────────────────┐
 │ Decision Table                              │
 ├─────────────────────────────────────────────┤
@@ -1211,19 +1223,19 @@ This reduces the number of test cases needed while maintaining coverage.
 ### 3.6 Advantages and Limitations
 
 **Advantages:**
-✅ Handles complex business rules effectively
-✅ Ensures all combinations considered
-✅ Documents business logic clearly
-✅ Easy to review with business stakeholders
-✅ Identifies missing rules
-✅ Eliminates redundancy
+- ✅ Handles complex business rules effectively
+- ✅ Ensures all combinations considered
+- ✅ Documents business logic clearly
+- ✅ Easy to review with business stakeholders
+- ✅ Identifies missing rules
+- ✅ Eliminates redundancy
 
 **Limitations:**
-❌ Can become very large (2^n rules)
-❌ Time-consuming for many conditions
-❌ Not suitable for sequential processes
-❌ Requires complete understanding of rules
-❌ May need simplification for practicality
+- ❌ Can become very large (2^n rules)
+- ❌ Time-consuming for many conditions
+- ❌ Not suitable for sequential processes
+- ❌ Requires complete understanding of rules
+- ❌ May need simplification for practicality
 
 ---
 
@@ -1243,6 +1255,8 @@ This reduces the number of test cases needed while maintaining coverage.
 - Systems with distinct states (ATM, call flow, order processing)
 - Workflows with sequences
 - State-dependent behavior
+
+
 - Systems where past actions affect current behavior
 
 **Representation:**
@@ -1255,6 +1269,8 @@ This reduces the number of test cases needed while maintaining coverage.
 
 **Components:**
 ```
+
+
  [State A] ──event/action──> [State B]
 
 [State]: Rounded rectangle
@@ -1273,6 +1289,8 @@ ATM Card Authentication System
 **States:**
 1. **Idle:** ATM waiting for card
 2. **Card Inserted:** Card in slot, waiting for PIN
+
+
 3. **PIN Entered:** PIN entered, waiting for validation
 4. **Authenticated:** PIN correct, ready for transactions
 5. **Blocked:** Card blocked after 3 failed attempts
@@ -1288,6 +1306,8 @@ ATM Card Authentication System
 **State Transition Diagram:**
 
 ```
+
+
                      Insert Card
       [Idle] ─────────────────────> [Card Inserted]
         ↑                                    │
@@ -1332,6 +1352,8 @@ ATM Card Authentication System
 │ Card Inserted  │ Timeout (30s)   │ Idle            │ Eject card   │
 │ Card Inserted  │ Cancel          │ Idle            │ Eject card   │
 ├────────────────┼─────────────────┼─────────────────┼──────────────┤
+
+
 │ PIN Entered    │ PIN Correct     │ Authenticated   │ Show menu    │
 │ PIN Entered    │ PIN Incorrect   │ PIN Entered     │ Increment    │
 │                │ (attempt < 3)   │                 │ attempt count│
@@ -1350,6 +1372,8 @@ ATM Card Authentication System
 **Test Cases (Valid Transitions):**
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Valid State Transitions:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1425,6 +1449,8 @@ Total: 8 test cases covering main state transitions
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
+
+
 ---
 
 ### 4.4 Detailed Example 2: Order Processing System
@@ -1445,6 +1471,8 @@ E-commerce order lifecycle
 **State Transition Diagram:**
 
 ```
+
+
   [New] ──Place Order──> [Payment Pending]
                               │
                     Payment Success   Payment Failed
@@ -1568,19 +1596,19 @@ Test all possible paths through states.
 ### 4.6 Advantages and Limitations
 
 **Advantages:**
-✅ Models real system behavior
-✅ Identifies invalid transitions
-✅ Good for sequential systems
-✅ Visual and easy to understand
-✅ Finds state-specific defects
-✅ Documents system workflows
+- ✅ Models real system behavior
+- ✅ Identifies invalid transitions
+- ✅ Good for sequential systems
+- ✅ Visual and easy to understand
+- ✅ Finds state-specific defects
+- ✅ Documents system workflows
 
 **Limitations:**
-❌ Not suitable for all systems
-❌ Can become complex with many states
-❌ Requires clear state definition
-❌ May miss condition-based logic
-❌ Difficult for concurrent states
+- ❌ Not suitable for all systems
+- ❌ Can become complex with many states
+- ❌ Requires clear state definition
+- ❌ May miss condition-based logic
+- ❌ Difficult for concurrent states
 
 ---
 

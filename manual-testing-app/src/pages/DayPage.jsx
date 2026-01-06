@@ -10,6 +10,7 @@ import { hasAssessment } from '../data/assessments';
 import { getAssessmentResult } from '../utils/assessmentStorage';
 import TableOfContents from '../components/TableOfContents';
 import ProgressTracker from '../components/ProgressTracker';
+import DiagramImage from '../components/DiagramImage';
 import 'highlight.js/styles/github-dark.css';
 
 const DayPage = () => {
@@ -180,6 +181,31 @@ const DayPage = () => {
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeSlug, rehypeHighlight]}
               components={{
+                // Custom rendering for images (diagrams)
+                img({ node, src, alt, title, ...props }) {
+                  // Check if this is a diagram image
+                  if (src && src.includes('/images/diagrams/')) {
+                    return (
+                      <DiagramImage
+                        src={src}
+                        alt={alt || 'Diagram'}
+                        caption={title}
+                        zoomable={true}
+                        {...props}
+                      />
+                    );
+                  }
+                  // Regular images
+                  return (
+                    <img
+                      src={src}
+                      alt={alt}
+                      title={title}
+                      className="rounded-lg shadow-md max-w-full h-auto"
+                      {...props}
+                    />
+                  );
+                },
                 // Custom rendering for code blocks
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || '');

@@ -22,6 +22,8 @@ Testing levels represent different phases of testing that correspond to differen
 
 **The 4 Testing Levels:**
 ```
+
+
 Unit Testing (Developer Focus)
         ↓
 Integration Testing (Developer + QA)
@@ -116,17 +118,17 @@ test('throws error for discount > 100', () => {
 - ✅ Code coverage adequate (>80%)?
 
 #### Benefits of Unit Testing:
-✅ Catches bugs early (cheapest to fix)
-✅ Enables refactoring with confidence
-✅ Documents code behavior
-✅ Fast execution (seconds)
-✅ Enables TDD (Test-Driven Development)
+- ✅ Catches bugs early (cheapest to fix)
+- ✅ Enables refactoring with confidence
+- ✅ Documents code behavior
+- ✅ Fast execution (seconds)
+- ✅ Enables TDD (Test-Driven Development)
 
 #### Limitations:
-❌ Doesn't test integration between components
-❌ May not catch system-level issues
-❌ Requires developer expertise
-❌ Can be time-consuming to write
+- ❌ Doesn't test integration between components
+- ❌ May not catch system-level issues
+- ❌ Requires developer expertise
+- ❌ Can be time-consuming to write
 
 ---
 
@@ -153,6 +155,8 @@ All modules are integrated simultaneously and tested as a whole.
 
 **Process:**
 ```
+
+
 Module A ─┐
 Module B ─┤
 Module C ─┼─→ Integrate All → Test Complete System
@@ -166,15 +170,15 @@ Module E ─┘
 - Tight deadlines
 
 **Advantages:**
-✅ Simple and straightforward
-✅ No need for stubs or drivers
-✅ Fast integration
+- ✅ Simple and straightforward
+- ✅ No need for stubs or drivers
+- ✅ Fast integration
 
 **Disadvantages:**
-❌ Difficult to isolate defects
-❌ Critical modules may be tested late
-❌ High risk approach
-❌ Debugging is complex
+- ❌ Difficult to isolate defects
+- ❌ Critical modules may be tested late
+- ❌ High risk approach
+- ❌ Debugging is complex
 
 **Example Scenario:**
 
@@ -199,11 +203,15 @@ Module E ─┘
 
 #### 1.3.2 Top-Down Integration
 
+
+
 **Approach:**
 Testing starts from top-level modules and progressively integrates and tests lower-level modules using stubs.
 
 **Process:**
 ```
+
+
         Module A (Main)
            ↓
     Test with Stubs for B & C
@@ -227,15 +235,17 @@ Testing starts from top-level modules and progressively integrates and tests low
 - Top-down development approach
 
 **Advantages:**
-✅ Early prototype possible
-✅ Critical modules tested first
-✅ Major flaws detected early
-✅ User interface testable early
+- ✅ Early prototype possible
+- ✅ Critical modules tested first
+- ✅ Major flaws detected early
+- ✅ User interface testable early
 
 **Disadvantages:**
-❌ Requires stub creation (overhead)
-❌ Lower-level modules tested late
-❌ May miss low-level issues initially
+- ❌ Requires stub creation (overhead)
+
+
+- ❌ Lower-level modules tested late
+- ❌ May miss low-level issues initially
 
 **Example Scenario:**
 
@@ -243,6 +253,8 @@ Testing starts from top-level modules and progressively integrates and tests low
 
 **Module Hierarchy:**
 ```
+
+
 Homepage (Top Level)
     ├── Product Catalog
     │       ├── Search Module
@@ -301,6 +313,8 @@ function getProducts_Stub(category) {
         {id: 1, name: "Product 1", price: 100},
         {id: 2, name: "Product 2", price: 200}
     ];
+
+
 }
 ```
 
@@ -313,6 +327,8 @@ Testing starts from lowest-level modules and progressively integrates upward usi
 
 **Process:**
 ```
+
+
     Module D (Lowest)
            ↓
     Test with Driver
@@ -334,16 +350,18 @@ Testing starts from lowest-level modules and progressively integrates upward usi
 - Core functionality needs early testing
 
 **Advantages:**
-✅ No stubs needed
-✅ Early testing of core functionality
-✅ Easier defect localization
-✅ Parallel testing possible
+- ✅ No stubs needed
+- ✅ Early testing of core functionality
+
+
+- ✅ Easier defect localization
+- ✅ Parallel testing possible
 
 **Disadvantages:**
-❌ Requires driver creation
-❌ User interface tested late
-❌ Major design flaws detected late
-❌ Early prototype not available
+- ❌ Requires driver creation
+- ❌ User interface tested late
+- ❌ Major design flaws detected late
+- ❌ Early prototype not available
 
 **Example Scenario:**
 
@@ -351,6 +369,8 @@ Testing starts from lowest-level modules and progressively integrates upward usi
 
 **Module Hierarchy:**
 ```
+
+
 Web Interface (Top)
     └── Transaction Service
             └── Account Service
@@ -409,6 +429,8 @@ function testDriver_validateAccount() {
     let result2 = validateAccount("INVALID");
     console.log("Test 2:", !result2 ? "PASS" : "FAIL");
 
+
+
     // Test case 3: Empty account
     let result3 = validateAccount("");
     console.log("Test 3:", !result3 ? "PASS" : "FAIL");
@@ -426,6 +448,8 @@ Combination of top-down and bottom-up approaches. Testing happens at multiple le
 
 **Process:**
 ```
+
+
     Top-Down from Main Module (with stubs)
                ↓
          Middle Layer
@@ -435,20 +459,22 @@ Combination of top-down and bottom-up approaches. Testing happens at multiple le
 
 **When to Use:**
 - Large, complex systems
+
+
 - Multiple teams working in parallel
 - Want benefits of both approaches
 
 **Advantages:**
-✅ Parallel testing possible
-✅ Balanced approach
-✅ Critical modules tested early
-✅ Reduced integration time
+- ✅ Parallel testing possible
+- ✅ Balanced approach
+- ✅ Critical modules tested early
+- ✅ Reduced integration time
 
 **Disadvantages:**
-❌ Complex planning required
-❌ Requires both stubs and drivers
-❌ Coordination overhead
-❌ Resource intensive
+- ❌ Complex planning required
+- ❌ Requires both stubs and drivers
+- ❌ Coordination overhead
+- ❌ Resource intensive
 
 **Example Scenario:**
 
@@ -456,6 +482,8 @@ Combination of top-down and bottom-up approaches. Testing happens at multiple le
 
 **Module Structure:**
 ```
+
+
 Level 1: User Interface Modules
          (Dashboard, Reports, Forms)
               ↓
@@ -792,6 +820,8 @@ Mobile:
 
 **3. Device Compatibility:**
 ```
+
+
 Screen Resolutions:
 - 1920x1080 (Desktop)
 - 1366x768 (Laptop)
@@ -816,6 +846,8 @@ Devices:
 **Example Compatibility Matrix:**
 
 ```
+
+
 ┌──────────┬─────────┬─────────┬────────┬──────────┐
 │ Browser  │ Windows │ macOS   │ iOS    │ Android  │
 ├──────────┼─────────┼─────────┼────────┼──────────┤
@@ -922,10 +954,10 @@ Steps:
 8. Verify manager receives notification
 
 Success Criteria:
-✅ Leave request submitted successfully
-✅ Email confirmation within 2 minutes
-✅ Manager can see pending request
-✅ Leave balance updated correctly
+- ✅ Leave request submitted successfully
+- ✅ Email confirmation within 2 minutes
+- ✅ Manager can see pending request
+- ✅ Leave balance updated correctly
 
 User Feedback: "Process is smooth, but would like to see
                public holiday indicator on calendar"
@@ -944,10 +976,10 @@ Steps:
 7. Verify employee receives notification
 
 Success Criteria:
-✅ Leave approved successfully
-✅ Employee notified within 2 minutes
-✅ Leave reflected in team calendar
-✅ Payroll system updated
+- ✅ Leave approved successfully
+- ✅ Employee notified within 2 minutes
+- ✅ Leave reflected in team calendar
+- ✅ Payroll system updated
 
 User Feedback: "Need to see team workload before approving.
                Calendar view is not sufficient."
@@ -1219,12 +1251,12 @@ Would you purchase? (at $49/month)
 - No: 6%
 
 Decision:
-✅ Fix all critical bugs
-✅ Fix performance issues
-✅ Add top 3 requested features for v1.0
-✅ Remaining features for v1.1-v1.3
-✅ Proceed to production launch
-✅ Offer beta users 50% discount for first year
+- ✅ Fix all critical bugs
+- ✅ Fix performance issues
+- ✅ Add top 3 requested features for v1.0
+- ✅ Remaining features for v1.1-v1.3
+- ✅ Proceed to production launch
+- ✅ Offer beta users 50% discount for first year
 ```
 
 ---
@@ -1267,6 +1299,8 @@ Decision:
 
 ### 2.1 Overview of Testing Types
 
+
+
 Testing types define WHAT aspect of the application to test.
 Testing levels define WHEN and WHERE in the system to test.
 
@@ -1294,6 +1328,8 @@ Testing levels define WHEN and WHERE in the system to test.
 
 **Coverage:**
 ```
+
+
 Feature 1: Login → Test basic login only
 Feature 2: Search → Test basic search only
 Feature 3: Cart → Test add to cart only
@@ -1307,35 +1343,35 @@ Feature 5: Payment → Test one payment method
 
 ```
 Module: Authentication (5 minutes)
-✅ TC001: Login with valid credentials
-✅ TC002: Logout successfully
+- ✅ TC001: Login with valid credentials
+- ✅ TC002: Logout successfully
 
 Module: Product Browse (10 minutes)
-✅ TC003: Homepage loads correctly
-✅ TC004: Product listing page displays
-✅ TC005: Product detail page opens
-✅ TC006: Basic search returns results
-✅ TC007: Category filter works
+- ✅ TC003: Homepage loads correctly
+- ✅ TC004: Product listing page displays
+- ✅ TC005: Product detail page opens
+- ✅ TC006: Basic search returns results
+- ✅ TC007: Category filter works
 
 Module: Shopping Cart (10 minutes)
-✅ TC008: Add product to cart
-✅ TC009: View cart
-✅ TC010: Update quantity
-✅ TC011: Remove item from cart
-✅ TC012: Cart total calculates correctly
+- ✅ TC008: Add product to cart
+- ✅ TC009: View cart
+- ✅ TC010: Update quantity
+- ✅ TC011: Remove item from cart
+- ✅ TC012: Cart total calculates correctly
 
 Module: Checkout (15 minutes)
-✅ TC013: Proceed to checkout
-✅ TC014: Enter shipping address
-✅ TC015: Select shipping method
-✅ TC016: Enter payment details (credit card)
-✅ TC017: Place order
-✅ TC018: Order confirmation displayed
-✅ TC019: Confirmation email received
+- ✅ TC013: Proceed to checkout
+- ✅ TC014: Enter shipping address
+- ✅ TC015: Select shipping method
+- ✅ TC016: Enter payment details (credit card)
+- ✅ TC017: Place order
+- ✅ TC018: Order confirmation displayed
+- ✅ TC019: Confirmation email received
 
 Module: User Account (5 minutes)
-✅ TC020: View order history
-✅ TC021: View profile
+- ✅ TC020: View order history
+- ✅ TC021: View profile
 
 Result: All 21 test cases PASSED
 Decision: Build is STABLE, proceed with detailed testing
@@ -1348,12 +1384,14 @@ Build: v2.5.3-build-789
 Smoke Test Result: FAILED
 
 Failed Test Cases:
-❌ TC001: Login with valid credentials
+- ❌ TC001: Login with valid credentials
    Error: "500 Internal Server Error"
 
 Impact: Cannot login = Cannot test anything else
 
 Decision: BUILD REJECTED
+
+
 Action: Return to development team
 Status: Testing blocked until fixed build deployed
 ```
@@ -1384,6 +1422,8 @@ Status: Testing blocked until fixed build deployed
 **Smoke vs Sanity:**
 
 ```
+
+
 Smoke Testing:
 ├── Wide coverage (all features)
 ├── Shallow depth (basic scenarios)
@@ -1446,10 +1486,10 @@ Bug Fix: Password reset not working
 Build: v2.5.4-build-801
 
 Sanity Test:
-✅ Reset password with valid email
-✅ Reset email received within 2 minutes
-✅ Reset link works
-❌ New password with special characters fails
+- ✅ Reset password with valid email
+- ✅ Reset email received within 2 minutes
+- ✅ Reset link works
+- ❌ New password with special characters fails
    Error: "Password must contain only letters and numbers"
 
 Issue: Developer fixed original bug but introduced new bug
@@ -1538,6 +1578,8 @@ Low Risk Areas (Optional):
 **Method 2: Impact Analysis**
 
 ```
+
+
 Code Change: Updated payment gateway integration (100 files)
 
 Impact Analysis:
@@ -1571,6 +1613,8 @@ Time Saved: 60%
 **Regression Test Suite:**
 
 ```
+
+
 Total Test Cases: 800
 ├── Authentication: 50 test cases
 ├── Product Catalog: 100 test cases
@@ -1607,40 +1651,44 @@ Timeline: +3 days to fix and retest
 
 **Regression Testing Challenges:**
 
-❌ **Time-Consuming:**
+- ❌ **Time-Consuming:**
 - 800 test cases × 5 minutes each = 66 hours
 - Solution: Automation (reduce to 4 hours)
 
-❌ **Maintenance Overhead:**
+- ❌ **Maintenance Overhead:**
 - Test cases need constant updates
 - Solution: Modular test design, regular cleanup
 
-❌ **Resource Intensive:**
+- ❌ **Resource Intensive:**
 - Requires multiple testers and environments
 - Solution: Parallel execution, cloud infrastructure
 
-❌ **Increasing Suite Size:**
+- ❌ **Increasing Suite Size:**
 - Suite grows with each release
 - Solution: Periodic test suite optimization
 
 **Best Practices:**
 
-✅ **Prioritize Test Cases:**
+
+
+- ✅ **Prioritize Test Cases:**
 - P0: Business critical (must run)
 - P1: Important features (should run)
 - P2: Nice to have (run if time)
 
-✅ **Automate Regression:**
+- ✅ **Automate Regression:**
 - Target 70-80% automation
 - Focus on stable, repetitive scenarios
 - Manual testing for new/unstable features
 
-✅ **Continuous Regression:**
+- ✅ **Continuous Regression:**
 - Run regression in CI/CD pipeline
 - Quick feedback to developers
 - Catch issues early
 
-✅ **Risk-Based Approach:**
+
+
+- ✅ **Risk-Based Approach:**
 - Test high-risk areas more thoroughly
 - Skip low-risk areas if time-constrained
 
@@ -1660,6 +1708,8 @@ Timeline: +3 days to fix and retest
 **Re-testing vs Regression:**
 
 ```
+
+
 Re-testing:
 ├── Tests same scenario that failed
 ├── Verifies specific bug fix
@@ -1676,6 +1726,8 @@ Regression Testing:
 **Re-testing Process:**
 
 ```
+
+
 Step 1: Developer fixes bug
    ↓
 Step 2: Update build deployed to test environment
@@ -1700,6 +1752,8 @@ Steps to Reproduce:
 1. Add 3 items to cart (total: $150)
 2. Apply discount code "SAVE20" (20% off)
 3. Observe cart total
+
+
 
 Expected Result: Cart total = $120 ($150 - 20%)
 Actual Result: Cart total = $170 (incorrect calculation)
@@ -1735,14 +1789,16 @@ Additional Verification:
 - Tested with invalid discount code ✅
 
 Decision:
-✅ Bug fix verified
-✅ Mark BUG-567 as VERIFIED
-✅ Proceed with regression testing of checkout module
+- ✅ Bug fix verified
+- ✅ Mark BUG-567 as VERIFIED
+- ✅ Proceed with regression testing of checkout module
 ```
 
 **Re-testing Failure Example:**
 
 ```
+
+
 BUG-789: Password reset email not received
 Status: FIXED (Build-808)
 
@@ -1768,7 +1824,7 @@ Step 5: Check spam folder
 Result: FAILED
 
 Decision:
-❌ Bug fix did NOT work
+- ❌ Bug fix did NOT work
 Status Changed: FIXED → REOPENED
 Assigned back to: Developer
 Comment: "Reset link still not being sent. Checked inbox
@@ -1781,22 +1837,22 @@ Possible email service configuration issue.
 
 **Re-testing Best Practices:**
 
-✅ **Use Original Test Case:**
+- ✅ **Use Original Test Case:**
 - Follow exact same steps
 - Use same test data
 - Same environment
 
-✅ **Test Edge Cases:**
+- ✅ **Test Edge Cases:**
 - Not just happy path
 - Test boundary values
 - Test error scenarios
 
-✅ **Verify Fix Completely:**
+- ✅ **Verify Fix Completely:**
 - Test multiple scenarios
 - Ensure fix is robust
 - Check for side effects
 
-✅ **Update Test Case:**
+- ✅ **Update Test Case:**
 - If bug revealed gap in test case
 - Add additional test steps
 - Improve test coverage
@@ -1902,13 +1958,13 @@ Passed: 532
 Failed: 68
 
 Critical Features Tested:
-✅ Login & Authentication (40 test cases)
-✅ Account Summary (50 test cases)
-✅ Fund Transfer (100 test cases)
-✅ Bill Payment (80 test cases)
-✅ Transaction History (40 test cases)
-✅ Card Management (60 test cases)
-✅ ATM Locator (30 test cases)
+- ✅ Login & Authentication (40 test cases)
+- ✅ Account Summary (50 test cases)
+- ✅ Fund Transfer (100 test cases)
+- ✅ Bill Payment (80 test cases)
+- ✅ Transaction History (40 test cases)
+- ✅ Card Management (60 test cases)
+- ✅ ATM Locator (30 test cases)
 
 Top Issues:
 1. Fund transfer fails for amounts > $10,000 (Critical)
@@ -1937,14 +1993,14 @@ Results:
 **Security Testing:**
 ```
 Tests Performed:
-✅ SQL Injection: All endpoints protected
-✅ XSS: Input sanitization working
-✅ Authentication: Strong password policy enforced
-✅ Session Management: Timeout working correctly
-✅ Data Encryption: All sensitive data encrypted
-✅ API Security: OAuth 2.0 implemented correctly
-❌ Found: Sensitive data in logs (High severity)
-❌ Found: Weak certificate pinning (Medium severity)
+- ✅ SQL Injection: All endpoints protected
+- ✅ XSS: Input sanitization working
+- ✅ Authentication: Strong password policy enforced
+- ✅ Session Management: Timeout working correctly
+- ✅ Data Encryption: All sensitive data encrypted
+- ✅ API Security: OAuth 2.0 implemented correctly
+- ❌ Found: Sensitive data in logs (High severity)
+- ❌ Found: Weak certificate pinning (Medium severity)
 
 Penetration Testing:
 - Hired external security firm
@@ -1958,23 +2014,23 @@ Penetration Testing:
 Devices Tested: 25 devices
 
 iOS:
-✅ iPhone 12 (iOS 16): All features working
-✅ iPhone 13 (iOS 17): All features working
-✅ iPhone 14 (iOS 17.2): All features working
-❌ iPad Air (iOS 15): Layout issues (tablet not optimized)
+- ✅ iPhone 12 (iOS 16): All features working
+- ✅ iPhone 13 (iOS 17): All features working
+- ✅ iPhone 14 (iOS 17.2): All features working
+- ❌ iPad Air (iOS 15): Layout issues (tablet not optimized)
 
 Android:
-✅ Samsung Galaxy S21 (Android 12): All features working
-✅ Samsung Galaxy S23 (Android 13): All features working
-✅ Google Pixel 6 (Android 13): All features working
-❌ OnePlus 9 (Android 11): Biometric auth not working
-❌ Xiaomi 12 (Android 12): Camera QR code scan failing
+- ✅ Samsung Galaxy S21 (Android 12): All features working
+- ✅ Samsung Galaxy S23 (Android 13): All features working
+- ✅ Google Pixel 6 (Android 13): All features working
+- ❌ OnePlus 9 (Android 11): Biometric auth not working
+- ❌ Xiaomi 12 (Android 12): Camera QR code scan failing
 
 Network Testing:
-✅ WiFi: Working perfectly
-✅ 4G: Working with acceptable delays
-✅ 3G: Working but slow (expected)
-❌ Offline mode: Not handling properly (High priority)
+- ✅ WiFi: Working perfectly
+- ✅ 4G: Working with acceptable delays
+- ✅ 3G: Working but slow (expected)
+- ❌ Offline mode: Not handling properly (High priority)
 ```
 
 **Week 14: Regression Testing**
@@ -2009,6 +2065,8 @@ Bugs Found: 34
 - Medium: 14
 - Low: 10
 
+
+
 User Feedback:
 Positive:
 - "Interface is clean and intuitive" (45/50)
@@ -2033,11 +2091,13 @@ Passed: 94
 Failed: 6
 
 Critical Issues:
-❌ Large transaction notifications delayed (2 reports)
-❌ Bill payment to certain billers failing (4 reports)
+- ❌ Large transaction notifications delayed (2 reports)
+- ❌ Bill payment to certain billers failing (4 reports)
 
 Enhancement Requests (Top 5):
 1. Fingerprint for transaction confirmation (145 requests)
+
+
 2. Spending analytics (132 requests)
 3. Split bill functionality (87 requests)
 4. Cardless ATM withdrawal (76 requests)
@@ -2054,6 +2114,8 @@ UAT Decision: APPROVED with 2 critical fixes
 **Final Results:**
 
 ```
+
+
 Total Testing Duration: 16 weeks
 Total Test Cases: 2,500+
 Total Defects Found: 456
@@ -2069,11 +2131,11 @@ Defect Distribution by Severity:
 └── Low: 162 (98 fixed, 64 deferred)
 
 Production Readiness:
-✅ All critical defects resolved
-✅ 98% of high-priority defects resolved
-✅ Security audit passed
-✅ Performance benchmarks met
-✅ UAT approval obtained
+- ✅ All critical defects resolved
+- ✅ 98% of high-priority defects resolved
+- ✅ Security audit passed
+- ✅ Performance benchmarks met
+- ✅ UAT approval obtained
 
 Launch Decision: GO
 Launch Date: March 1, 2026
@@ -2083,6 +2145,8 @@ Expected Users: 1 million customers
 **Post-Launch (First 3 months):**
 
 ```
+
+
 Production Defects: 23
 ├── Critical: 1 (hotfix deployed within 4 hours)
 ├── High: 4 (fixed in next release)

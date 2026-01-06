@@ -31,6 +31,8 @@
 ### 1.2 Bug Life Cycle States
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 COMPLETE BUG LIFE CYCLE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -462,6 +464,8 @@ Can Reopen If: Detailed reproduction steps provided
 
 **Example 3: Duplicate**
 ```
+
+
 Defect: BUG-515
 Status: REJECTED (DUPLICATE)
 Rejected By: Jane Smith (QA Manager)
@@ -490,14 +494,20 @@ Action:
 - Reporter notified to follow BUG-505 for updates
 ```
 
+
+
 ---
 
 ### 1.4 Bug Life Cycle in Different Organizations
 
 **Organization A (Startup - Agile):**
 ```
+
+
 NEW → OPEN → IN PROGRESS → RESOLVED → CLOSED
               ↓
+
+
            REJECTED
 
 - Simple, fast workflow
@@ -507,6 +517,10 @@ NEW → OPEN → IN PROGRESS → RESOLVED → CLOSED
 
 **Organization B (Enterprise - Waterfall):**
 ```
+
+
+
+
 NEW → TRIAGED → ASSIGNED → ANALYZED → IN PROGRESS →
 CODE REVIEW → FIXED → BUILD DEPLOYED → RETEST →
 VERIFIED → CLOSED
@@ -518,6 +532,8 @@ VERIFIED → CLOSED
 
 **Organization C (Regulated Industry - Healthcare/Finance):**
 ```
+
+
 NEW → INTAKE REVIEW → APPROVED → PRIORITY SET →
 ASSIGNED → IN PROGRESS → CODE COMPLETE →
 PEER REVIEW → QA REVIEW → FIXED → BUILD VALIDATION →
@@ -665,6 +681,8 @@ BUG-601_Expected_vs_Actual.png
 ```
 
 **2. Screen Recordings:**
+
+
 ```
 ✓ Show complete reproduction steps
 ✓ Keep video < 2 minutes if possible
@@ -679,7 +697,11 @@ Tools:
 ```
 
 **3. Logs:**
+
+
 ```
+
+
 ✓ Browser console logs (F12 → Console)
 ✓ Application logs
 ✓ Server logs (if accessible)
@@ -694,6 +716,8 @@ Uncaught TypeError: Cannot read property 'amount' of undefined
 
 **4. HAR Files:**
 ```
+
+
 ✓ Capture network traffic
 ✓ Useful for API issues
 ✓ Shows request/response
@@ -1084,6 +1108,8 @@ Size can be:
 - Function Points
 - Modules
 - Features
+
+
 ```
 
 **Example 1:**
@@ -1105,6 +1131,8 @@ Assessment: Good (3 defects per KLOC)
 
 **Example 2:**
 ```
+
+
 Module-wise Defect Density:
 
 ┌─────────────────┬────────┬───────┬──────────────┐
@@ -1183,6 +1211,8 @@ Defects in Testing: 200
 Defects in Production: 25
 Total: 225
 
+
+
 Defect Leakage = (25 / 225) × 100 = 11.1%
 
 Target: < 5% leakage
@@ -1206,6 +1236,8 @@ Defect Age = Closure Date - Detection Date (in days)
 
 **Example:**
 ```
+
+
 Defect Aging Report:
 
 ┌──────────┬───────────────┬──────────────┬─────────┐
@@ -1279,6 +1311,8 @@ BUG-601:
 - Defect detected: Jan 12
 - MTTD: 7 days
 
+
+
 BUG-602:
 - Defect introduced: Jan 8
 - Defect detected: Jan 9
@@ -1306,6 +1340,8 @@ MTTR = Total Fix Time / Number of Defects Fixed
 
 **Example:**
 ```
+
+
 Defect Fix Times:
 
 ┌──────────┬───────────────┬──────────────┬──────────┐

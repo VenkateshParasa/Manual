@@ -19,6 +19,8 @@
 
 **DAY 1: Manual Testing Fundamentals & SDLC Integration**
 ```
+
+
 Key Topics Covered:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✓ Manual Testing Definition & Objectives
@@ -221,6 +223,8 @@ MUST-KNOW FORMULAS
 
 **STLC Phase Summary:**
 ```
+
+
 ┌────────────────────┬─────────────────┬───────────────────┐
 │ Phase              │ Key Activity    │ Deliverable       │
 ├────────────────────┼─────────────────┼───────────────────┤
@@ -994,12 +998,16 @@ READY FOR WEEK 2?
 ✓ Comprehensive understanding of manual testing fundamentals
 ✓ Knowledge of SDLC and STLC processes
 ✓ Mastery of 7+ test design techniques
+
+
 ✓ Professional documentation skills
 ✓ Defect management expertise
 ✓ Foundation for advanced testing
 
 **Your Learning Journey:**
 ```
+
+
 Week 1: FOUNDATIONS ✓
 ├── SDLC & STLC
 ├── Testing Levels & Types

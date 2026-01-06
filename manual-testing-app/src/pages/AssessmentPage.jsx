@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { BookOpen, Award, Clock, AlertCircle, CheckCircle2, Eye, Zap, Target } from 'lucide-react';
+import { BookOpen, Award, Clock, AlertCircle, CheckCircle2, Eye, Zap, Target, Shield } from 'lucide-react';
 import { getDayById } from '../utils/contentStructure';
 import { getAssessment, hasAssessment, hasAssessmentModes, getAssessmentModes } from '../data/assessments';
 import { getAssessmentResult, canRetakeAssessment } from '../utils/assessmentStorage';
 import AssessmentQuiz from '../components/AssessmentQuiz';
+import ExamPreCheckModal from '../components/ExamPreCheckModal';
 
 const AssessmentPage = () => {
   const { dayId } = useParams();
@@ -16,6 +17,7 @@ const AssessmentPage = () => {
   const [previousResult, setPreviousResult] = useState(null);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showReview, setShowReview] = useState(false);
+  const [showExamPreCheck, setShowExamPreCheck] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -53,12 +55,32 @@ const AssessmentPage = () => {
   }, [dayId]);
 
   const handleStartAssessment = (mode = selectedMode) => {
+    // Show pre-check modal for exam mode
+    if (mode === 'exam') {
+      setSelectedMode(mode);
+      const assessmentData = getAssessment(dayId, mode);
+      setAssessment(assessmentData);
+      setShowExamPreCheck(true);
+      return;
+    }
+
     // Reload assessment with selected mode
     const assessmentData = getAssessment(dayId, mode);
     setAssessment(assessmentData);
     setSelectedMode(mode);
     setShowQuiz(true);
     setShowReview(false);
+  };
+
+  const handleExamPreCheckComplete = () => {
+    setShowExamPreCheck(false);
+    setShowQuiz(true);
+    setShowReview(false);
+  };
+
+  const handleExamPreCheckCancel = () => {
+    setShowExamPreCheck(false);
+    setSelectedMode('quick'); // Reset to quick mode
   };
 
   const handleCompleteAssessment = (results) => {
@@ -112,14 +134,23 @@ const AssessmentPage = () => {
 
   if (showQuiz) {
     return (
-      <div className="px-4 py-8">
-        <AssessmentQuiz
-          assessment={assessment}
-          dayId={dayId}
-          onComplete={handleCompleteAssessment}
-          mode={selectedMode}
-        />
-      </div>
+      <>
+        {showExamPreCheck && (
+          <ExamPreCheckModal
+            assessment={assessment}
+            onStart={handleExamPreCheckComplete}
+            onCancel={handleExamPreCheckCancel}
+          />
+        )}
+        <div className="px-4 py-8">
+          <AssessmentQuiz
+            assessment={assessment}
+            dayId={dayId}
+            onComplete={handleCompleteAssessment}
+            mode={selectedMode}
+          />
+        </div>
+      </>
     );
   }
 
@@ -155,7 +186,7 @@ const AssessmentPage = () => {
       {assessmentModes && !showQuiz && !showReview && (
         <div className="card mb-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Choose Assessment Mode</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Quick Mode */}
             <button
               onClick={() => {
@@ -224,6 +255,48 @@ const AssessmentPage = () => {
                       35 questions
                     </span>
                   </div>
+                </div>
+              </div>
+            </button>
+
+            {/* Exam Mode */}
+            <button
+              onClick={() => {
+                setSelectedMode('exam');
+                const assessmentData = getAssessment(dayId, 'exam');
+                setAssessment(assessmentData);
+              }}
+              className={`p-6 rounded-lg border-2 transition-all text-left ${
+                selectedMode === 'exam'
+                  ? 'border-red-600 bg-red-50'
+                  : 'border-gray-200 hover:border-red-300'
+              }`}
+            >
+              <div className="flex items-start gap-3 mb-3">
+                <Shield className={`w-6 h-6 ${selectedMode === 'exam' ? 'text-red-600' : 'text-gray-400'}`} />
+                <div className="flex-1">
+                  <h4 className="font-semibold text-gray-900 mb-1 flex items-center gap-2">
+                    Exam Mode
+                    <span className="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-bold">MONITORED</span>
+                  </h4>
+                  <p className="text-sm text-gray-600 mb-2">
+                    Full certification simulation with strict monitoring
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-2">
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-4 h-4" />
+                      90 min
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <BookOpen className="w-4 h-4" />
+                      50 questions
+                    </span>
+                  </div>
+                  <ul className="text-xs text-gray-600 space-y-1">
+                    <li>• Full-screen required</li>
+                    <li>• Tab switch detection</li>
+                    <li>• Adaptive difficulty</li>
+                  </ul>
                 </div>
               </div>
             </button>

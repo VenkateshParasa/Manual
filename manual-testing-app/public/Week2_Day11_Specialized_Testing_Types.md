@@ -20,6 +20,8 @@
 **Definitions:**
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 INTERNATIONALIZATION (i18n) vs LOCALIZATION (L10n)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -669,6 +671,8 @@ Means: ALL Level A and ALL Level AA criteria met.
 ### 2.2 Detailed Accessibility Testing Scenarios
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PERCEIVABLE: Users must be able to perceive information
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1593,8 +1597,8 @@ Screening questions example:
 Step 3: Prepare Test Scenarios
 Create realistic tasks, not instructions
 
-❌ Bad: "Click the search icon in the top right and search for 'laptop'"
-✅ Good: "You're looking for a laptop for college. Find one that costs under $800."
+- ❌ Bad: "Click the search icon in the top right and search for 'laptop'"
+- ✅ Good: "You're looking for a laptop for college. Find one that costs under $800."
 
 5-7 tasks per session
 
@@ -2125,11 +2129,15 @@ Test:
 
 ---
 
+
+
 ## Compatibility Testing
 
 ### 4.1 Browser Compatibility Testing (Deep Dive)
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BROWSER COMPATIBILITY TESTING (COMPREHENSIVE)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

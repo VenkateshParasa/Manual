@@ -1200,6 +1200,8 @@ Rate your confidence (1-5) on each topic:
 
 **Your Progress:**
 ```
+
+
 Week 1: FOUNDATIONS ✓
 ├── Testing Principles
 ├── SDLC & STLC

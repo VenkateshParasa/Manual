@@ -437,19 +437,19 @@ Priority: P0
 ### 1.5 Advantages and Limitations
 
 **Advantages:**
-✅ End-to-end coverage
-✅ Business perspective
-✅ Realistic scenarios
-✅ Covers happy path and exceptions
-✅ Easy for stakeholders to understand
-✅ Derives from requirements
+- ✅ End-to-end coverage
+- ✅ Business perspective
+- ✅ Realistic scenarios
+- ✅ Covers happy path and exceptions
+- ✅ Easy for stakeholders to understand
+- ✅ Derives from requirements
 
 **Limitations:**
-❌ Time-consuming to create
-❌ May miss non-functional aspects
-❌ Requires detailed use cases
-❌ Can become outdated
-❌ May not cover all edge cases
+- ❌ Time-consuming to create
+- ❌ May miss non-functional aspects
+- ❌ Requires detailed use cases
+- ❌ Can become outdated
+- ❌ May not cover all edge cases
 
 ---
 
@@ -737,20 +737,20 @@ Total: 16 error guessing test cases
 ### 2.5 Advantages and Limitations
 
 **Advantages:**
-✅ Quick to apply
-✅ Leverages experience
-✅ Finds unexpected defects
-✅ Complements formal techniques
-✅ No documentation needed
-✅ Cost-effective
+- ✅ Quick to apply
+- ✅ Leverages experience
+- ✅ Finds unexpected defects
+- ✅ Complements formal techniques
+- ✅ No documentation needed
+- ✅ Cost-effective
 
 **Limitations:**
-❌ Depends on tester's experience
-❌ Not systematic
-❌ Hard to measure coverage
-❌ May miss obvious scenarios
-❌ Not repeatable
-❌ Difficult for new testers
+- ❌ Depends on tester's experience
+- ❌ Not systematic
+- ❌ Hard to measure coverage
+- ❌ May miss obvious scenarios
+- ❌ Not repeatable
+- ❌ Difficult for new testers
 
 ---
 
@@ -790,20 +790,20 @@ Exploratory Testing:
 ### 3.2 When to Use Exploratory Testing
 
 **Ideal Scenarios:**
-✅ New features with limited documentation
-✅ Time-constrained testing
-✅ Supplement to scripted testing
-✅ Learning the application
-✅ Finding edge cases
-✅ After automated tests run
-✅ Risk-based testing
+- ✅ New features with limited documentation
+- ✅ Time-constrained testing
+- ✅ Supplement to scripted testing
+- ✅ Learning the application
+- ✅ Finding edge cases
+- ✅ After automated tests run
+- ✅ Risk-based testing
 
 **Not Ideal:**
-❌ Regulatory compliance testing
-❌ When complete documentation required
-❌ Repeatable regression testing
-❌ Inexperienced testers
-❌ Large-scale coverage requirements
+- ❌ Regulatory compliance testing
+- ❌ When complete documentation required
+- ❌ Repeatable regression testing
+- ❌ Inexperienced testers
+- ❌ Large-scale coverage requirements
 
 ---
 
@@ -999,6 +999,8 @@ Follow code/architecture structure
 **90-Minute Exploratory Session:**
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CHARTER: Explore food ordering flow
 TIME: 90 minutes
@@ -1135,6 +1137,8 @@ Next Session Ideas:
 
 **1. Mind Maps:**
 ```
+
+
         Food Delivery App
                |
     ┌──────────┼──────────┐
@@ -1167,20 +1171,20 @@ Documented above in 3.4
 ### 3.6 Advantages and Limitations
 
 **Advantages:**
-✅ Flexible and adaptive
-✅ Quick feedback
-✅ Finds unexpected issues
-✅ Learning while testing
-✅ Good for new features
-✅ Complements automation
+- ✅ Flexible and adaptive
+- ✅ Quick feedback
+- ✅ Finds unexpected issues
+- ✅ Learning while testing
+- ✅ Good for new features
+- ✅ Complements automation
 
 **Limitations:**
-❌ Depends on tester skill
-❌ Hard to measure coverage
-❌ Not fully repeatable
-❌ Requires experienced testers
-❌ Documentation overhead
-❌ May miss obvious test cases
+- ❌ Depends on tester skill
+- ❌ Hard to measure coverage
+- ❌ Not fully repeatable
+- ❌ Requires experienced testers
+- ❌ Documentation overhead
+- ❌ May miss obvious test cases
 
 ---
 
@@ -1225,12 +1229,16 @@ def calculate_grade(score):
         return "B"               # Statement 4
     elif score >= 70:            # Statement 5
         return "C"               # Statement 6
+
+
     else:                        # Statement 7
         return "F"               # Statement 8
 ```
 
 **Test Case 1:**
 ```
+
+
 Input: score = 95
 Path: Statement 1 → Statement 2
 Coverage: 2/8 = 25%
@@ -1257,6 +1265,8 @@ Total Coverage: 8/8 = 100%
 def check_eligibility(age, income):
     if age >= 18:                    # Decision 1
         if income >= 30000:          # Decision 2
+
+
             return "Eligible"
         else:
             return "Low Income"
@@ -1266,6 +1276,8 @@ def check_eligibility(age, income):
 
 **Decision Table:**
 ```
+
+
 Decision 1 (age >= 18):  True or False
 Decision 2 (income >= 30000): True or False
 
@@ -1284,6 +1296,8 @@ Branch Coverage: 3 branches out of 3 = 100%
 **Definition:** Percentage of possible paths through the code executed.
 
 **Example:**
+
+
 ```python
 def process_order(premium, expedite):
     fee = 0
@@ -1296,6 +1310,8 @@ def process_order(premium, expedite):
 
 **Possible Paths:**
 ```
+
+
 Path 1: premium=False, expedite=False → fee=0
 Path 2: premium=True,  expedite=False → fee=10
 Path 3: premium=False, expedite=True  → fee=20

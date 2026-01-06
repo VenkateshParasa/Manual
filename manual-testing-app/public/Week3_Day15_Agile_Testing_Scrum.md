@@ -202,6 +202,8 @@ TWELVE AGILE PRINCIPLES
 ### 1.2 Agile vs Waterfall
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 AGILE VS WATERFALL COMPARISON
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -761,6 +763,8 @@ Tester Specifically:
 ### 3.1 Whole Team Approach to Quality
 
 ```
+
+
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 WHOLE TEAM QUALITY APPROACH
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
